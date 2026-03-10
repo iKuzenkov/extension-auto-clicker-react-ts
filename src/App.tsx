@@ -1,9 +1,9 @@
-import Test from './components/Test.tsx';
+import Main from './components/Main/Main.tsx';
 
 function App() {
   return (
     <>
-      <Test />
+      <Main />
     </>
   );
 }

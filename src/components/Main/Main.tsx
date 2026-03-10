@@ -1,6 +1,6 @@
-import './Test.scss';
+import './Main.scss';
 
-function Test() {
+function Main() {
   return (
     <>
       <div className="test-1">1</div>
@@ -8,4 +8,4 @@ function Test() {
   );
 }
 
-export default Test;
+export default Main;
