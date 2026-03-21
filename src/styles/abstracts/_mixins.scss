@@ -1,0 +1,18 @@
+@use '@/styles/abstracts/variables' as *;
+
+@mixin container-styles {
+  all: initial;
+  position: fixed;
+  box-sizing: border-box;
+  top: 100px;
+  left: 100px;
+  border: $border-primary;
+  border-radius: $border-radius-primary;
+  z-index: 9999999;
+}
+
+@mixin re-button($border, $border-radius, $padding) {
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+}

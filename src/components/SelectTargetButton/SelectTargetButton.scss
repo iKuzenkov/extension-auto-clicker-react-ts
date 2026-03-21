@@ -1,10 +1,10 @@
 @use '@/styles/abstracts/mixins' as *;
 @use '@/styles/abstracts/variables' as *;
 
-#acext-toolbar-container-ss {
+#acext-select-target-button-container-ss {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
   background: $bg-primary;
 }

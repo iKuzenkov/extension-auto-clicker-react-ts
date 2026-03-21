@@ -1,2 +1,6 @@
 @use '@/styles/abstracts/mixins' as *;
 @use '@/styles/abstracts/variables' as *;
+
+#acext-title-ss {
+  background: $bg-primary;
+}

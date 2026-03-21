@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import type { AutoClickerMessage } from './types/message.ts';
+import type { MessageTypes } from './content-types/MessageTypes.ts';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/store.ts';
@@ -20,7 +20,7 @@ export function RootWrapper() {
 
   useEffect(() => {
     function onMessage(
-      msg: AutoClickerMessage,
+      msg: MessageTypes,
       _sender: chrome.runtime.MessageSender,
       sendResponse: (response: { autoClickerVisible: boolean }) => void
     ): boolean | undefined {

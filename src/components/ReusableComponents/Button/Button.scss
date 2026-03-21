@@ -1,0 +1,15 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+.acext-button-ss {
+  all: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.3rem;
+  flex: 1;
+  color: black;
+  background: $bg-primary;
+  cursor: pointer;
+  @include re-button($border-primary, $border-radius-primary, $padding-primary);
+}

@@ -1,0 +1,25 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+#acext-info-ss {
+  display: flex;
+  background: $bg-primary;
+
+  .acext-more-info-container-ss {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+
+    .acext-link-to-source-ss {
+      text-decoration: none;
+
+      button.acext-more-info-btn-ss {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: 100%;
+      }
+    }
+  }
+}

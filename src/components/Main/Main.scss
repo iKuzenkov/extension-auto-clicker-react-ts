@@ -1,2 +1,50 @@
-@use "@/styles/abstracts/mixins" as *;
-@use "@/styles/abstracts/variables" as *;
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+#acext-panel-container-ss {
+  @include container-styles;
+
+  #acext-panel-container-ss::before,
+  #acext-panel-container-ss::after {
+    box-sizing: border-box;
+  }
+
+  #grid-layout {
+    display: grid;
+    grid-template-areas:
+      'toolbar toolbar toolbar'
+      'selectTargetButton selectTargetButton selectTargetButton'
+      'input input input'
+      'buttons buttons buttons'
+      'buttons buttons buttons'
+      'buttons buttons buttons'
+      'countInfo countInfo countInfo'
+      'info info info';
+    grid-template-rows: 40px 40px 33px 40px 40px 40px 27px 20px;
+    grid-template-columns: repeat(3, calc(200px / 3));
+
+    #acext-toolbar-container-ss {
+      grid-area: toolbar;
+    }
+
+    #acext-select-target-button-container-ss {
+      grid-area: selectTargetButton;
+    }
+
+    #acext-inputs-container-ss {
+      grid-area: input;
+    }
+
+    #acext-logic-buttons-container-ss {
+      grid-area: buttons;
+    }
+
+    #acext-count-info-ss {
+      grid-area: countInfo;
+    }
+
+    #acext-info-ss {
+      grid-area: info;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+.acext-input-ss {
+  all: initial;
+  margin: 0 0.3rem;
+  width: 30%;
+  border: $border-primary;
+  border-radius: $border-radius-primary;
+  background: #fff;
+  cursor: text;
+}

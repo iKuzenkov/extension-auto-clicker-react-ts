@@ -1,0 +1,28 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+#acext-more-info-container-ss {
+  @include container-styles;
+
+  #acext-grid-layout-more-info-ss {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'info-use'
+      'buttons';
+    grid-template-rows: 30px 230px 20px;
+    grid-template-columns: 200px;
+
+    #acext-title-ss {
+      grid-area: title;
+    }
+
+    #acext-info-use-ss {
+      grid-area: info-use;
+    }
+
+    #acext-buttons-ss {
+      grid-area: buttons;
+    }
+  }
+}

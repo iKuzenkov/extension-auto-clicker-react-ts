@@ -1,0 +1,22 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+#acext-info-use-ss {
+  all: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  overflow-y: auto;
+  background: $bg-primary;
+
+  .acext-info-use-ol-ss {
+    list-style-type: none;
+    padding-left: 0;
+
+    .acext-list-of-li-ss {
+      list-style-type: none;
+      padding-left: 0;
+    }
+  }
+}

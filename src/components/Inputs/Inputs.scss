@@ -1,0 +1,28 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+#acext-inputs-container-ss {
+  all: initial;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: $bg-primary;
+
+  .acext-timer-inputs-ss {
+    display: flex;
+    width: 100%;
+
+    input:nth-child(1) {
+      margin-right: 5px;
+    }
+
+    input:nth-child(2) {
+      margin-right: 5px;
+    }
+
+    input::placeholder {
+      text-align: center;
+    }
+  }
+}
