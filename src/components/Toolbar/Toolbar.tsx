@@ -1,16 +1,21 @@
+import { useRef } from 'react';
 import Button from '../ReusableComponents/Button/Button.tsx';
-// import type { Void } from './Types.ts';
+import useDrag from './utils/drag-n-drop/useDrag.ts';
+import type { Props } from './Types.ts';
 import './Toolbar.scss';
 
-const onDragAndDropClick = () => {};
-const onThemeClick = () => {};
-const onToggleClick = () => {};
+function Toolbar(props: Props) {
+  const { panelRef } = props;
+  const dragHandleRef = useRef<HTMLButtonElement>(null);
 
-function Toolbar() {
+  useDrag({ panelRef, dragHandleRef });
+  const onThemeClick = (): void => {};
+  const onToggleClick = (): void => {};
+
   return (
     <>
       <div id="acext-toolbar-container-ss">
-        <Button onClick={onDragAndDropClick} title="⇕⇕⇕" />
+        <Button title="⇕⇕⇕" ref={dragHandleRef} />
         <Button onClick={onThemeClick} title="Theme" />
         <Button onClick={onToggleClick} title="👁" />
       </div>
