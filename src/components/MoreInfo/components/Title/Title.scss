@@ -2,5 +2,11 @@
 @use '@/styles/abstracts/variables' as *;
 
 #acext-title-ss {
-  background: $bg-primary;
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
 }

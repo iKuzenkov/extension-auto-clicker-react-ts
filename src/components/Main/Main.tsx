@@ -9,6 +9,7 @@ import './Main.scss';
 
 function Main() {
   const panelRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <div id="acext-panel-container-ss" ref={panelRef}>

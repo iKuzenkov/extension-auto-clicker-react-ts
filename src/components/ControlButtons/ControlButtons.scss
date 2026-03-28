@@ -6,7 +6,14 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background: $bg-primary;
+
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
 
   button:nth-child(1) {
     margin-bottom: 1px;

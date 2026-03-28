@@ -3,7 +3,14 @@
 
 #acext-info-ss {
   display: flex;
-  background: $bg-primary;
+
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
 
   .acext-more-info-container-ss {
     display: flex;
@@ -13,12 +20,20 @@
     .acext-link-to-source-ss {
       text-decoration: none;
 
-      button.acext-more-info-btn-ss {
+      .acext-more-info-btn-ss {
         display: flex;
         justify-content: center;
         align-items: center;
         width: fit-content;
         height: 100%;
+
+        &.acext-light-ss {
+          background: $bg-primary;
+        }
+
+        &.acext-dark-ss {
+          background: $bg-dark-primary;
+        }
       }
     }
   }

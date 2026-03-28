@@ -6,5 +6,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: $bg-primary;
+
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
 }

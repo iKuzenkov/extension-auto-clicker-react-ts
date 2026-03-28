@@ -8,7 +8,15 @@
   justify-content: flex-start;
   align-content: center;
   overflow-y: auto;
-  background: $bg-primary;
+  @include scrollbar;
+
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
 
   .acext-info-use-ol-ss {
     list-style-type: none;

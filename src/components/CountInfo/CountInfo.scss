@@ -4,7 +4,14 @@
 #acext-count-info-ss {
   display: flex;
   flex-direction: row;
-  background: $bg-primary;
+
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
 
   .acext-count-click-ss {
     display: flex;
