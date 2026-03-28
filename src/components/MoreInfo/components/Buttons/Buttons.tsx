@@ -1,13 +1,11 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import type { Theme } from '../../../../global-types/ThemeTypes.ts';
+import type { Theme } from '../../../../types/global-state-types/ThemeTypes.ts';
 import type { RootState } from '../../../../store/store.ts';
 import './Buttons.scss';
 
 function Buttons() {
-  const state: Theme = useSelector(
-    (state: RootState): Theme => state.theme.theme
-  );
+  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
       <div id="acext-buttons-ss">

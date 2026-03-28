@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import type { MessageTypes } from './global-types/MessageTypes.ts';
+import type { MessageTypes } from './types/content-types/MessageTypes.ts';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/store.ts';

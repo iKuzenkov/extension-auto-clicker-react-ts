@@ -1,4 +1,4 @@
-import type { AutoClickerMessage } from '../src/global-types/MessageTypes';
+import type { AutoClickerMessage } from '../src/types/content-types/MessageTypes';
 import './popup.scss';
 
 type AutoClickerStateResponse = {
