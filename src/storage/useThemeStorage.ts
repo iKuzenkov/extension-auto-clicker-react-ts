@@ -8,30 +8,30 @@ import type {
 import { toggleTheme, toggleHideShow } from '../features/uiSlice.ts';
 
 type Props = {
-  stateTheme: Theme;
-  stateHideShow: HideShow;
+  theme: Theme;
+  hideShow: HideShow;
 };
 
 export const useStorage = (props: Props): void => {
-  const { stateTheme, stateHideShow } = props;
+  const { theme, hideShow } = props;
 
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const savedTheme: string | null = localStorage.getItem('theme');
-    const stateHideShow: string | null = localStorage.getItem('hide-show');
+    const savedHideShow: string | null = localStorage.getItem('hide-show');
 
     if (savedTheme === 'light' || savedTheme === 'dark') {
       dispatch(toggleTheme(savedTheme));
     }
 
-    if (stateHideShow === 'hide' || stateHideShow === 'show') {
-      dispatch(toggleHideShow(stateHideShow));
+    if (savedHideShow === 'hide' || savedHideShow === 'show') {
+      dispatch(toggleHideShow(savedHideShow));
     }
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem('theme', stateTheme);
-    localStorage.setItem('hide-show', stateHideShow);
-  }, [stateTheme, stateHideShow]);
+    localStorage.setItem('theme', theme);
+    localStorage.setItem('hide-show', hideShow);
+  }, [theme, hideShow]);
 };
