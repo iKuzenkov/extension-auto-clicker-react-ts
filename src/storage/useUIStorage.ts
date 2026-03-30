@@ -4,16 +4,16 @@ import type { AppDispatch } from '../store/store.ts';
 import type {
   Theme,
   HideShow,
-} from '../types/global-state-types/uiSliceTypes.ts';
+} from '../types/global-state-types/GlobalTypes.ts';
 import { toggleTheme, toggleHideShow } from '../features/uiSlice.ts';
 
 type Props = {
   theme: Theme;
-  hideShow: HideShow;
+  isVisible: HideShow;
 };
 
-export const useStorage = (props: Props): void => {
-  const { theme, hideShow } = props;
+export const useUIStorage = (props: Props): void => {
+  const { theme, isVisible } = props;
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -25,13 +25,13 @@ export const useStorage = (props: Props): void => {
       dispatch(toggleTheme(savedTheme));
     }
 
-    if (savedHideShow === 'hide' || savedHideShow === 'show') {
-      dispatch(toggleHideShow(savedHideShow));
+    if (savedHideShow !== null) {
+      dispatch(toggleHideShow(savedHideShow === 'true'));
     }
   }, [dispatch]);
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
-    localStorage.setItem('hide-show', hideShow);
-  }, [theme, hideShow]);
+    localStorage.setItem('hide-show', String(isVisible));
+  }, [theme, isVisible]);
 };

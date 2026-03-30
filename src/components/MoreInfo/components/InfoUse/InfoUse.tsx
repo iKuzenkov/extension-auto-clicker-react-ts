@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
-import type { Props } from './Types.ts';
-import type { Theme } from '../../../../types/global-state-types/ThemeTypes.ts';
 import type { RootState } from '../../../../store/store.ts';
+import type { Theme } from '../../../../types/global-state-types/GlobalTypes.ts';
+import type { Props, Element } from './Types.ts';
+
 import './InfoUse.scss';
 
 function InfoUse(props: Props) {
@@ -12,7 +13,7 @@ function InfoUse(props: Props) {
     <>
       <div id="acext-info-use-ss" className={`acext-${state}-ss`}>
         <ol className="acext-info-use-ol-ss">
-          {info.map(({ id, text }: { id: number; text: string }) => (
+          {info.map(({ id, text }: Element) => (
             <li key={id} className="acext-list-of-li-ss">
               {text}
             </li>

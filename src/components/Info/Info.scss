@@ -12,14 +12,6 @@
     background: $bg-dark-primary;
   }
 
-  &.acext-show-ss {
-    display: flex;
-  }
-
-  &.acext-hide-ss {
-    display: none;
-  }
-
   .acext-more-info-container-ss {
     display: flex;
     justify-content: center;
@@ -42,7 +34,6 @@
         &.acext-dark-ss {
           background: $bg-dark-primary;
         }
-
       }
     }
   }

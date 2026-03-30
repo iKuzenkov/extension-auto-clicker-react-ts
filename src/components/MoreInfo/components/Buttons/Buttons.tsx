@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import type { Theme } from '../../../../types/global-state-types/ThemeTypes.ts';
 import type { RootState } from '../../../../store/store.ts';
+import type { Theme } from '../../../../types/global-state-types/GlobalTypes.ts';
 import './Buttons.scss';
 
 function Buttons() {

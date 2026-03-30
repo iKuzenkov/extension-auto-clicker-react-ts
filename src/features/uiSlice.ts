@@ -2,27 +2,27 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type {
   Theme,
   HideShow,
-} from '../types/global-state-types/uiSliceTypes.ts';
+} from '../types/global-state-types/GlobalTypes.ts';
 
 type State = {
   theme: Theme;
-  hideShow: HideShow;
+  isVisible: HideShow;
 };
 
 const initialState: State = {
   theme: 'light',
-  hideShow: 'show',
+  isVisible: true,
 };
 
 const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    toggleTheme: (state, action: PayloadAction<Theme>) => {
+    toggleTheme: (state, action: PayloadAction<Theme>): void => {
       state.theme = action.payload;
     },
-    toggleHideShow: (state, action: PayloadAction<HideShow>) => {
-      state.hideShow = action.payload;
+    toggleHideShow: (state, action: PayloadAction<HideShow>): void => {
+      state.isVisible = action.payload;
     },
   },
 });

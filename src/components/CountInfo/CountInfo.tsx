@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
-import type { Theme } from '../../types/global-state-types/ThemeTypes.ts';
+
 import type { RootState } from '../../store/store.ts';
+import type { Theme } from '../../types/global-state-types/GlobalTypes.ts';
 import './CountInfo.scss';
 
 function CountInfo() {

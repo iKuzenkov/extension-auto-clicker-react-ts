@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import type { Props } from './Types.ts';
-import type { Theme } from '../../../../types/global-state-types/ThemeTypes.ts';
 import type { RootState } from '../../../../store/store.ts';
+import type { Props } from './Types.ts';
+import type { Theme } from '../../../../types/global-state-types/GlobalTypes.ts';
 import './Title.scss';
 
 function Title(props: Props) {
