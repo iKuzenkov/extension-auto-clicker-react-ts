@@ -1,9 +1,9 @@
 @use '@/styles/abstracts/mixins' as *;
 @use '@/styles/abstracts/variables' as *;
 
-#acext-logic-buttons-container-ss {
+#acext-button-stop-ss {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-content: center;
 
@@ -13,19 +13,5 @@
 
   &.acext-dark-ss {
     background: $bg-dark-primary;
-  }
-
-  button:nth-child(1) {
-    margin-bottom: 1px;
-  }
-
-  button:nth-child(2) {
-    margin-top: 1px;
-    margin-bottom: 1px;
-  }
-
-  button:nth-child(3) {
-    margin-top: 1px;
-    margin-bottom: 1px;
   }
 }

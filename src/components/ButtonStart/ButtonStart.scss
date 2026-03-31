@@ -1,16 +1,11 @@
 @use '@/styles/abstracts/mixins' as *;
 @use '@/styles/abstracts/variables' as *;
 
-.acext-button-ss {
-  all: initial;
+#acext-button-start-ss {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin: 0.1rem;
-  flex: 1;
-  color: black;
-  cursor: pointer;
-  @include re-button($border-primary, $border-radius-primary, $padding-primary);
+  align-content: center;
 
   &.acext-light-ss {
     background: $bg-primary;

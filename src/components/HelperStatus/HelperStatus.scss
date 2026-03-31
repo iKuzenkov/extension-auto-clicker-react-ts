@@ -1,0 +1,26 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+#acext-helper-status-ss {
+  display: flex;
+  flex-direction: row;
+
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
+
+  .acext-status-message-ss {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1px 0.3rem;
+    width: 100%;
+    border: $border-primary;
+    border-radius: $border-radius-primary;
+  }
+}

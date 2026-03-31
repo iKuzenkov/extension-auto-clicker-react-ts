@@ -3,8 +3,12 @@ import { useRef } from 'react';
 import Toolbar from '../Toolbar/Toolbar.tsx';
 import SelectTargetButton from '../SelectTargetButton/SelectTargetButton.tsx';
 import Inputs from '../Inputs/Inputs.tsx';
-import ControlButtons from '../ControlButtons/ControlButtons.tsx';
+import ButtonStart from '../ButtonStart/ButtonStart.tsx';
+import ButtonStop from '../ButtonStop/ButtonStop.tsx';
+import ButtonReset from '../ButtonReset/ButtonReset.tsx';
 import CountInfo from '../CountInfo/CountInfo.tsx';
+import NextClick from '../NextClick/NextClick.tsx';
+import HelperStatus from '../HelperStatus/HelperStatus.tsx';
 import Info from '../Info/Info.tsx';
 import type { RootState } from '../../store/store.ts';
 import type { HideShow } from '../../types/global-state-types/GlobalTypes.ts';
@@ -23,8 +27,12 @@ function Main() {
           <Toolbar panelRef={panelRef} />
           {isVisible && <SelectTargetButton />}
           {isVisible && <Inputs />}
-          {isVisible && <ControlButtons />}
+          {isVisible && <ButtonStart />}
+          {isVisible && <ButtonStop />}
+          {isVisible && <ButtonReset />}
           {isVisible && <CountInfo />}
+          {isVisible && <NextClick />}
+          {isVisible && <HelperStatus />}
           {isVisible && <Info />}
         </div>
       </div>
