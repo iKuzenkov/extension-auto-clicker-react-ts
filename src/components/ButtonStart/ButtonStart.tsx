@@ -6,8 +6,9 @@ import './ButtonStart.scss';
 
 function ButtonStart() {
   const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
-
-  const onStartClick = () => {};
+  const onStartClick = () => {
+    console.log('Start');
+  };
 
   return (
     <>
