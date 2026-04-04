@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import themeReducer from '../features/uiSlice.ts';
+import logicSlice from '../features/logicSlice.ts';
 
 export const store = configureStore({
   reducer: {
     ui: themeReducer,
+    logic: logicSlice,
   },
 });
 
