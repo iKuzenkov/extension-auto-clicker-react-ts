@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import handleElementClick from './logic/handleElementClick.ts';
 import type { AppDispatch } from '../../store/store.ts';
-import { savedElement } from '../../features/logicSlice.ts';
+import type { SelectedElement } from '../../types/global-state-types/GlobalTypes.ts';
 
 function useSaveElement() {
   const [isSelecting, setIsSelecting] = useState(false);
@@ -11,17 +12,11 @@ function useSaveElement() {
     if (!isSelecting) return;
 
     const saveElement = (e: MouseEvent): void => {
-      e.preventDefault();
-      e.stopPropagation();
+      const result: SelectedElement = handleElementClick(e, dispatch);
 
-      if (
-        !(e.target instanceof HTMLElement) ||
-        e.target.closest('[id="acext-panel-container-ss"]')
-      )
-        return;
-      const target: HTMLElement = e.target;
-      dispatch(savedElement(target));
-      setIsSelecting(false);
+      if (result) {
+        setIsSelecting(false);
+      }
     };
 
     document.addEventListener('click', saveElement, true);
