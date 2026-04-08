@@ -52,7 +52,7 @@ function useDrag(props: Props): void {
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
     };
-  }, []);
+  }, [panelRef, dragHandleRef]);
 }
 
 export default useDrag;

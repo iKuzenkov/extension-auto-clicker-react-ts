@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme, toggleHideShow } from '../../features/uiSlice.ts';
-import useDrag from './utils/drag-n-drop/useDrag.ts';
+import useDrag from '../../hooks/drag-n-drop/useDrag.ts';
 import { useUIStorage } from '../../storage/useUIStorage.ts';
 import Button from '../ReusableComponents/Button/Button.tsx';
 import type { Props } from './Types.ts';
