@@ -1,7 +1,7 @@
 import Title from './components/Title/Title.tsx';
 import InfoUse from './components/InfoUse/InfoUse.tsx';
 import Buttons from './components/Buttons/Buttons.tsx';
-import { dataInfo } from './data.ts';
+import { dataInfo } from './data';
 import './MoreInfo.scss';
 
 function MoreInfo() {

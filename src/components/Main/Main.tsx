@@ -10,8 +10,8 @@ import CountInfo from '../CountInfo/CountInfo.tsx';
 import NextClick from '../NextClick/NextClick.tsx';
 import HelperStatus from '../HelperStatus/HelperStatus.tsx';
 import Info from '../Info/Info.tsx';
-import type { RootState } from '../../store/store.ts';
-import type { HideShow } from '../../types/global-state-types/GlobalTypes.ts';
+import type { RootState } from '../../store/store';
+import type { HideShow } from '../../types/global-state-types/GlobalTypes';
 import './Main.scss';
 
 function Main() {

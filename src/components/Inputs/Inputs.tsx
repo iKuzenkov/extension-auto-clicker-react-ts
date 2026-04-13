@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import Field from '../ReusableComponents/Field/Field.tsx';
-import type { RootState } from '../../store/store.ts';
-import type { Theme } from '../../types/global-state-types/GlobalTypes.ts';
+import type { RootState } from '../../store/store';
+import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import './Inputs.scss';
 
 function Inputs() {

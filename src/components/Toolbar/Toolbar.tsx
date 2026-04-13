@@ -1,15 +1,15 @@
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme, toggleHideShow } from '../../features/uiSlice.ts';
-import useDrag from '../../hooks/drag-n-drop/useDrag.ts';
-import { useUIStorage } from '../../storage/useUIStorage.ts';
+import { toggleTheme, toggleHideShow } from '../../features/uiSlice';
+import useDrag from '../../hooks/drag-n-drop/useDrag';
+import { useUIStorage } from '../../storage/useUIStorage';
 import Button from '../ReusableComponents/Button/Button.tsx';
-import type { Props } from './Types.ts';
+import type { Props } from './Types';
 import type {
   Theme,
   HideShow,
-} from '../../types/global-state-types/GlobalTypes.ts';
-import type { AppDispatch, RootState } from '../../store/store.ts';
+} from '../../types/global-state-types/GlobalTypes';
+import type { AppDispatch, RootState } from '../../store/store';
 import './Toolbar.scss';
 
 function Toolbar(props: Props) {

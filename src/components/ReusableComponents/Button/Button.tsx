@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../../store/store.ts';
-import type { Theme } from '../../../types/global-state-types/GlobalTypes.ts';
-import type { Props } from './Types.ts';
+import type { RootState } from '../../../store/store';
+import type { Theme } from '../../../types/global-state-types/GlobalTypes';
+import type { Props } from './Types';
 import './Button.scss';
 
 function Button({ onClick, title, ref }: Props) {

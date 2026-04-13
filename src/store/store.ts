@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import uiReducer from '../features/uiSlice.ts';
-import logicReducer from '../features/logicSlice.ts';
+import uiReducer from '../features/uiSlice';
+import logicReducer from '../features/logicSlice';
 
 export const store = configureStore({
   reducer: {
