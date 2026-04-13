@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import Button from '../ReusableComponents/Button/Button.tsx';
+import Button from '../ReusableComponents/Button/Button';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import type { RootState } from '../../store/store';
 import './ButtonReset.scss';

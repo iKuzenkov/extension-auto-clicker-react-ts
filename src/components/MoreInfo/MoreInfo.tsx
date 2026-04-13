@@ -1,6 +1,6 @@
-import Title from './components/Title/Title.tsx';
-import InfoUse from './components/InfoUse/InfoUse.tsx';
-import Buttons from './components/Buttons/Buttons.tsx';
+import Title from './components/Title/Title';
+import InfoUse from './components/InfoUse/InfoUse';
+import Buttons from './components/Buttons/Buttons';
 import { dataInfo } from './data';
 import './MoreInfo.scss';
 
