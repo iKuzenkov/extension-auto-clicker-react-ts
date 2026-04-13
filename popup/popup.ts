@@ -1,9 +1,8 @@
-import type { MessageTypes } from '../src/types/content-types/MessageTypes';
+import type {
+  MessageTypes,
+  AutoClickerStateResponse,
+} from '../src/types/content-types/MessageTypes';
 import './popup.scss';
-
-type AutoClickerStateResponse = {
-  autoClickerVisible: boolean;
-};
 
 const btn = document.getElementById('toggle') as HTMLButtonElement | null;
 
