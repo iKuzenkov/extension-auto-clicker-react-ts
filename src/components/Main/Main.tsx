@@ -7,7 +7,7 @@ import ButtonStart from '../ButtonStart/ButtonStart';
 import ButtonStop from '../ButtonStop/ButtonStop';
 import ButtonReset from '../ButtonReset/ButtonReset';
 import CountInfo from '../CountInfo/CountInfo';
-import NextClick from '../NextClick/NextClick';
+import NextClickInfo from '../NextClickInfo/NextClickInfo';
 import HelperStatus from '../HelperStatus/HelperStatus';
 import Info from '../Info/Info';
 import type { RootState } from '../../store/store';
@@ -31,7 +31,7 @@ function Main() {
           {isVisible && <ButtonStop />}
           {isVisible && <ButtonReset />}
           {isVisible && <CountInfo />}
-          {isVisible && <NextClick />}
+          {isVisible && <NextClickInfo />}
           {isVisible && <HelperStatus />}
           {isVisible && <Info />}
         </div>

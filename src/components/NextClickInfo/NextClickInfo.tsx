@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../store/store';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
-import './NextClick.scss';
+import './NextClickInfo.scss';
 
-function NextClick() {
+function NextClickInfo() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
@@ -14,4 +14,4 @@ function NextClick() {
   );
 }
 
-export default NextClick;
+export default NextClickInfo;
