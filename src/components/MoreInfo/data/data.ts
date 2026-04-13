@@ -1,4 +1,6 @@
-export const dataInfo = {
+import type { DataInfo } from './DataTypes';
+
+export const dataInfo: DataInfo = {
   title: 'How to Use',
   info: [
     {

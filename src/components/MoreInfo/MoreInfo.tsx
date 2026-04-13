@@ -1,7 +1,7 @@
 import Title from './components/Title/Title';
 import InfoUse from './components/InfoUse/InfoUse';
 import Buttons from './components/Buttons/Buttons';
-import { dataInfo } from './data';
+import { dataInfo } from './data/data';
 import './MoreInfo.scss';
 
 function MoreInfo() {
