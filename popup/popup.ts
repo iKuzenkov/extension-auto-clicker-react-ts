@@ -1,9 +1,8 @@
-import type { AutoClickerMessage } from '../src/types/content-types/MessageTypes';
+import type {
+  MessageTypes,
+  AutoClickerStateResponse,
+} from '../src/types/content-types/MessageTypes';
 import './popup.scss';
-
-type AutoClickerStateResponse = {
-  autoClickerVisible: boolean;
-};
 
 const btn = document.getElementById('toggle') as HTMLButtonElement | null;
 
@@ -26,7 +25,7 @@ function requestPanelState(): void {
 
     chrome.tabs.sendMessage(
       tab.id,
-      { action: 'get-auto-clicker-state' } as AutoClickerMessage,
+      { action: 'get-auto-clicker-state' } as MessageTypes,
       (response?: AutoClickerStateResponse) => {
         if (response && typeof response.autoClickerVisible === 'boolean') {
           isOn = response.autoClickerVisible;
@@ -46,7 +45,7 @@ btn?.addEventListener('click', () => {
   chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
     if (!tab?.id) return;
 
-    const message: AutoClickerMessage = {
+    const message: MessageTypes = {
       action: 'toggle-auto-clicker',
       autoClickerVisible: isOn,
     };

@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../store/store.ts';
+import type { RootState } from '../../store/store';
 import type {
   Theme,
   Message,
-} from '../../types/global-state-types/GlobalTypes.ts';
+} from '../../types/global-state-types/GlobalTypes';
 import './HelperStatus.scss';
 
 function HelperStatus() {

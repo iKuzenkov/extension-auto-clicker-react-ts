@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { SelectedElement } from '../types/global-state-types/GlobalTypes.ts';
+import type { SelectedElement } from '../types/global-state-types/GlobalTypes';
 
 type State = {
   selectedElement: SelectedElement;

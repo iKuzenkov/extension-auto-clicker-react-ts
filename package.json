@@ -12,8 +12,9 @@
     "format": "prettier . --write",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
     "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
-    "done": "npm run lint:fix && npm run lint:css:fix && npm run format && npm run build",
-    "test": "jest"
+    "test": "jest",
+    "type-check": "tsc --noEmit",
+    "done": "npm run type-check && npm run lint:fix && npm run lint:css:fix && npm run format && npm run build"
   },
   "dependencies": {
     "-": "^0.0.1",

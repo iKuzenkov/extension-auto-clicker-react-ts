@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import type { Props } from './Types.ts';
+import type { Props } from './Types';
 
 function useDrag(props: Props): void {
   const { panelRef, dragHandleRef } = props;

@@ -1,6 +1,6 @@
 import { savedElement } from '../../../features/logicSlice';
-import type { AppDispatch } from '../../../store/store.ts';
-import type { SelectedElement } from '../../../types/global-state-types/GlobalTypes.ts';
+import type { AppDispatch } from '../../../store/store';
+import type { SelectedElement } from '../../../types/global-state-types/GlobalTypes';
 
 function handleElementClick(
   e: MouseEvent,
