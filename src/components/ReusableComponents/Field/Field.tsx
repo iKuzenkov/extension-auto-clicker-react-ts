@@ -22,9 +22,12 @@ function Field(props: Props) {
         className="acext-input-ss"
         value={value}
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
+          const value: string = e.target.value;
+          if (!/^\d*$/.test(value)) return;
+
           setTime((prevState: Time) => ({
             ...prevState,
-            [name]: e.target.value,
+            [name]: value,
           }));
         }}
         placeholder={placeholder}
