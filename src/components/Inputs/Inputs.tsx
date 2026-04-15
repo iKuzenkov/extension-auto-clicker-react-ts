@@ -1,19 +1,41 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Field from '../ReusableComponents/Field/Field';
 import type { RootState } from '../../store/store';
-import type { Theme } from '../../types/global-state-types/GlobalTypes';
+import type { Theme, Time } from '../../types/global-state-types/GlobalTypes';
 import './Inputs.scss';
 
 function Inputs() {
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+
+  const [time, setTime] = useState<Time>({
+    hour: '',
+    minute: '',
+    second: '',
+  });
 
   return (
     <>
-      <div id="acext-inputs-container-ss" className={`acext-${state}-ss`}>
+      <div id="acext-inputs-container-ss" className={`acext-${theme}-ss`}>
         <div className="acext-timer-inputs-ss">
-          <Field placeholder="h" />
-          <Field placeholder="m" />
-          <Field placeholder="s" />
+          <Field
+            name="hour"
+            value={time.hour}
+            setTime={setTime}
+            placeholder="h"
+          />
+          <Field
+            name="minute"
+            value={time.minute}
+            setTime={setTime}
+            placeholder="m"
+          />
+          <Field
+            name="second"
+            value={time.second}
+            setTime={setTime}
+            placeholder="s"
+          />
         </div>
       </div>
     </>
