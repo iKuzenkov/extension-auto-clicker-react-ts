@@ -14,7 +14,7 @@ type State = {
 const initialState: State = {
   theme: 'light',
   isVisible: true,
-  message: '',
+  message: 'select a target',
 };
 
 const uiSlice = createSlice({

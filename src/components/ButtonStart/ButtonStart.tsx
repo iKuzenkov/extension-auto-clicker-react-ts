@@ -9,8 +9,11 @@ function ButtonStart() {
   const selectedElement = useSelector(
     (state: RootState) => state.logic.selectedElement
   );
+  const delay = useSelector((state: RootState) => state.logic.delayInSeconds);
+
   const onStartClick = () => {
     console.log('Start', selectedElement);
+    console.log('delay', delay);
   };
 
   return (
