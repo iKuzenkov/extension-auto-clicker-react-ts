@@ -1,4 +1,5 @@
 import { savedElement } from '../../../features/logicSlice';
+import { statusMessage } from '../../../features/uiSlice';
 import type { AppDispatch } from '../../../store/store';
 import type { SelectedElement } from '../../../types/global-state-types/GlobalTypes';
 
@@ -17,6 +18,7 @@ function handleElementClick(
 
   const target: HTMLElement = e.target;
   dispatch(savedElement(target));
+  dispatch(statusMessage('element is selected'));
 
   return e.target;
 }
