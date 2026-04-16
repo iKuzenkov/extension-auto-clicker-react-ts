@@ -1,5 +1,5 @@
-import handleElementClick from './logic/handleElementClick';
-import type { SelectedElement } from '../../types/global-state-types/GlobalTypes';
+import handleElementClick from './handleElementClick';
+import type { SelectedElement } from '../../../types/global-state-types/GlobalTypes';
 
 describe('handleElementClick()', () => {
   it('should be return element', () => {

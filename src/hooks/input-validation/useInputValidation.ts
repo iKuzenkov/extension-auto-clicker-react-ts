@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import delayInSeconds from './logic/delay-in-seconds';
 import type { AppDispatch } from '../../store/store';
 import { statusMessage } from '../../features/uiSlice';
 import type { Time, Delay } from '../../types/global-state-types/GlobalTypes';
@@ -22,9 +23,9 @@ function useInputValidation(time: Time): Delay {
       dispatch(statusMessage('max 59 seconds'));
     }
   }, [dispatch, h, m, s]);
-  if (h > 10000 || m > 59 || s > 59) return null;
 
-  return h * 3600 + m * 60 + s;
+  const delay: number | null = delayInSeconds(h, m, s);
+  return delay;
 }
 
 export default useInputValidation;
