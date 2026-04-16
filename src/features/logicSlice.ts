@@ -1,9 +1,12 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { SelectedElement } from '../types/global-state-types/GlobalTypes';
+import type {
+  SelectedElement,
+  Delay,
+} from '../types/global-state-types/GlobalTypes';
 
 type State = {
   selectedElement: SelectedElement;
-  delayInSeconds: number | null;
+  delayInSeconds: Delay;
 };
 
 const initialState: State = {
@@ -19,7 +22,7 @@ const logicSlice = createSlice({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       state.selectedElement = action.payload as any;
     },
-    delayForTimer: (state, action: PayloadAction<number | null>): void => {
+    delayForTimer: (state, action: PayloadAction<Delay>): void => {
       state.delayInSeconds = action.payload;
     },
   },

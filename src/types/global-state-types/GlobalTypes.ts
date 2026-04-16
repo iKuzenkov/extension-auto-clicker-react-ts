@@ -8,3 +8,4 @@ export type Time = {
   second: string;
 };
 export type KeysFromTime = keyof Time;
+export type Delay = number | null;

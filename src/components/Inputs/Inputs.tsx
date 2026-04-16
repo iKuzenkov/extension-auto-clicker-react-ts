@@ -4,7 +4,11 @@ import Field from '../ReusableComponents/Field/Field';
 import useInputValidation from '../../hooks/input-validation/useInputValidation';
 import { delayForTimer } from '../../features/logicSlice';
 import type { AppDispatch, RootState } from '../../store/store';
-import type { Theme, Time } from '../../types/global-state-types/GlobalTypes';
+import type {
+  Theme,
+  Time,
+  Delay,
+} from '../../types/global-state-types/GlobalTypes';
 import './Inputs.scss';
 
 function Inputs() {
@@ -16,7 +20,7 @@ function Inputs() {
     second: '',
   });
 
-  const delayInSeconds: number | null = useInputValidation(time);
+  const delayInSeconds: Delay = useInputValidation(time);
 
   useEffect(() => {
     dispatch(delayForTimer(delayInSeconds));

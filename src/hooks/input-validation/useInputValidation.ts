@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../store/store';
 import { statusMessage } from '../../features/uiSlice';
-import type { Time } from '../../types/global-state-types/GlobalTypes';
+import type { Time, Delay } from '../../types/global-state-types/GlobalTypes';
 
-function useInputValidation(time: Time) {
+function useInputValidation(time: Time): Delay {
   const { hour, minute, second } = time;
   const dispatch = useDispatch<AppDispatch>();
   const h: number = hour === '' ? 0 : Number(hour);
