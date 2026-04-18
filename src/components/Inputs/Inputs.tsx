@@ -20,12 +20,11 @@ function Inputs() {
     second: '',
   });
 
-  const delayInSeconds: Delay = useInputValidation(time);
+  const delayInMilliseconds: Delay = useInputValidation(time);
 
   useEffect(() => {
-    dispatch(delayForTimer(delayInSeconds));
-    console.log(delayInSeconds);
-  }, [dispatch, delayInSeconds]);
+    dispatch(delayForTimer(delayInMilliseconds));
+  }, [dispatch, delayInMilliseconds]);
 
   return (
     <>

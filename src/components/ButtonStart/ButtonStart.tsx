@@ -1,20 +1,21 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import useTimerLogic from '../../hooks/timer-logic/useTimerLogic';
+import { timerState } from '../../features/logicSlice';
 import Button from '../ReusableComponents/Button/Button';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
-import type { RootState } from '../../store/store';
+import type { AppDispatch, RootState } from '../../store/store';
 import './ButtonStart.scss';
 
 function ButtonStart() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
-  const selectedElement = useSelector(
-    (state: RootState) => state.logic.selectedElement
-  );
-  const delay = useSelector((state: RootState) => state.logic.delayInSeconds);
+  const dispatch = useDispatch<AppDispatch>();
 
-  const onStartClick = () => {
-    console.log('Start', selectedElement);
-    console.log('delay', delay);
+  const onStartClick = (): void => {
+    dispatch(timerState(true));
+    console.log('onStartClick');
   };
+
+  useTimerLogic();
 
   return (
     <>

@@ -6,12 +6,14 @@ import type {
 
 type State = {
   selectedElement: SelectedElement;
-  delayInSeconds: Delay;
+  delayInMilliseconds: Delay;
+  isRunningTimerState: boolean;
 };
 
 const initialState: State = {
   selectedElement: null,
-  delayInSeconds: 0,
+  delayInMilliseconds: 0,
+  isRunningTimerState: false,
 };
 
 const logicSlice = createSlice({
@@ -23,10 +25,13 @@ const logicSlice = createSlice({
       state.selectedElement = action.payload as any;
     },
     delayForTimer: (state, action: PayloadAction<Delay>): void => {
-      state.delayInSeconds = action.payload;
+      state.delayInMilliseconds = action.payload;
+    },
+    timerState: (state, action: PayloadAction<boolean>): void => {
+      state.isRunningTimerState = action.payload;
     },
   },
 });
 
-export const { savedElement, delayForTimer } = logicSlice.actions;
+export const { savedElement, delayForTimer, timerState } = logicSlice.actions;
 export default logicSlice.reducer;
