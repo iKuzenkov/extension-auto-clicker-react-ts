@@ -1,6 +1,8 @@
-function delayInSeconds(h: number, m: number, s: number): number | null {
+import type { Delay } from '../../../types/global-state-types/GlobalTypes';
+
+function delayInMilliseconds(h: number, m: number, s: number): Delay {
   if (h > 10000 || m > 59 || s > 59) return null;
   return (h * 3600 + m * 60 + s) * 1000;
 }
 
-export default delayInSeconds;
+export default delayInMilliseconds;

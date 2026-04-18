@@ -1,7 +1,8 @@
-import delayInSeconds from './delay-in-seconds';
+import delayInMilliseconds from './delay-in-milliseconds';
+import type { Delay } from '../../../types/global-state-types/GlobalTypes';
 
-describe('delayInSeconds()', () => {
-  it('should return correct seconds for valid time', () => {
+describe('delayInMilliseconds()', () => {
+  it('should return correct milliseconds for valid time', () => {
     const mockTime = {
       h: 1,
       m: 4,
@@ -9,8 +10,8 @@ describe('delayInSeconds()', () => {
     };
     const { h, m, s } = mockTime;
 
-    const delay: number | null = delayInSeconds(h, m, s);
-    expect(delay).toBe(3850);
+    const delay: Delay = delayInMilliseconds(h, m, s);
+    expect(delay).toBe(3850000);
   });
   it('should return null for invalid time', () => {
     const mockTime = {
@@ -20,7 +21,7 @@ describe('delayInSeconds()', () => {
     };
     const { h, m, s } = mockTime;
 
-    const delay: number | null = delayInSeconds(h, m, s);
+    const delay: Delay = delayInMilliseconds(h, m, s);
     expect(delay).toBeNull();
   });
 });

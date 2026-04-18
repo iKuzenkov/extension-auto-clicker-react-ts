@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import delayInSeconds from './logic/delay-in-seconds';
+import delayInMilliseconds from './logic/delay-in-milliseconds';
 import type { AppDispatch } from '../../store/store';
 import { statusMessage } from '../../features/uiSlice';
 import type { Time, Delay } from '../../types/global-state-types/GlobalTypes';
@@ -24,7 +24,7 @@ function useInputValidation(time: Time): Delay {
     }
   }, [dispatch, h, m, s]);
 
-  const delay: number | null = delayInSeconds(h, m, s);
+  const delay: Delay = delayInMilliseconds(h, m, s);
   return delay;
 }
 
