@@ -9,7 +9,7 @@ type Props = {
   isVisible: HideShow;
 };
 
-export const useUIStorage = (props: Props): void => {
+const useUIStorage = (props: Props): void => {
   const { theme, isVisible } = props;
 
   const dispatch = useDispatch<AppDispatch>();
@@ -32,3 +32,5 @@ export const useUIStorage = (props: Props): void => {
     localStorage.setItem('hide-show', String(isVisible));
   }, [theme, isVisible]);
 };
+
+export default useUIStorage;
