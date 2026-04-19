@@ -18,7 +18,7 @@ function handleElementClick(
 
   const target: HTMLElement = e.target;
   dispatch(savedElement(target));
-  dispatch(statusMessage('element is selected'));
+  dispatch(statusMessage('target is selected'));
 
   return e.target;
 }

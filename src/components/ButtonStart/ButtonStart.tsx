@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import useTimerLogic from '../../hooks/timer-logic/useTimerLogic';
 import { timerState } from '../../features/logicSlice';
+import { statusMessage } from '../../features/uiSlice';
 import Button from '../ReusableComponents/Button/Button';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import type { AppDispatch, RootState } from '../../store/store';
@@ -12,7 +13,7 @@ function ButtonStart() {
 
   const onStartClick = (): void => {
     dispatch(timerState(true));
-    console.log('onStartClick');
+    dispatch(statusMessage('working...'));
   };
 
   useTimerLogic();
