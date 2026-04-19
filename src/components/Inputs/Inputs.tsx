@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Field from '../ReusableComponents/Field/Field';
 import useInputValidation from '../../hooks/input-validation/useInputValidation';
+import useTimeStorage from '../../storage/useTimeStorage';
 import { delayForTimer } from '../../features/logicSlice';
 import type { AppDispatch, RootState } from '../../store/store';
 import type {
@@ -14,11 +15,21 @@ import './Inputs.scss';
 function Inputs() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const dispatch = useDispatch<AppDispatch>();
-  const [time, setTime] = useState<Time>({
-    hour: '',
-    minute: '',
-    second: '',
+
+  const [time, setTime] = useState<Time>(() => {
+    const saved: string | null = localStorage.getItem('time');
+    if (!saved) {
+      return { hour: '', minute: '', second: '' };
+    }
+
+    try {
+      return JSON.parse(saved);
+    } catch {
+      return { hour: '', minute: '', second: '' };
+    }
   });
+
+  useTimeStorage(time);
 
   const delayInMilliseconds: Delay = useInputValidation(time);
 
