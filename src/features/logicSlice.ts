@@ -8,12 +8,14 @@ type State = {
   selectedElement: SelectedElement;
   delayInMilliseconds: Delay;
   isRunningTimerState: boolean;
+  quantityClicks: number;
 };
 
 const initialState: State = {
   selectedElement: null,
   delayInMilliseconds: 0,
   isRunningTimerState: false,
+  quantityClicks: 0,
 };
 
 const logicSlice = createSlice({
@@ -30,8 +32,12 @@ const logicSlice = createSlice({
     timerState: (state, action: PayloadAction<boolean>): void => {
       state.isRunningTimerState = action.payload;
     },
+    quantityState: (state): void => {
+      state.quantityClicks += 1;
+    },
   },
 });
 
-export const { savedElement, delayForTimer, timerState } = logicSlice.actions;
+export const { savedElement, delayForTimer, timerState, quantityState } =
+  logicSlice.actions;
 export default logicSlice.reducer;
