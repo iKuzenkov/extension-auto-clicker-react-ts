@@ -6,7 +6,7 @@ import Inputs from '../Inputs/Inputs';
 import ButtonStart from '../ButtonStart/ButtonStart';
 import ButtonStop from '../ButtonStop/ButtonStop';
 import ButtonReset from '../ButtonReset/ButtonReset';
-import CountInfo from '../CountInfo/CountInfo';
+import ClickCount from '../ClickCount/ClickCount';
 import NextClickInfo from '../NextClickInfo/NextClickInfo';
 import HelperStatus from '../HelperStatus/HelperStatus';
 import Info from '../Info/Info';
@@ -30,7 +30,7 @@ function Main() {
           {isVisible && <ButtonStart />}
           {isVisible && <ButtonStop />}
           {isVisible && <ButtonReset />}
-          {isVisible && <CountInfo />}
+          {isVisible && <ClickCount />}
           {isVisible && <NextClickInfo />}
           {isVisible && <HelperStatus />}
           {isVisible && <Info />}
