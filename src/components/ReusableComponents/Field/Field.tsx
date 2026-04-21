@@ -1,20 +1,25 @@
-import * as React from 'react';
 import { type ChangeEvent } from 'react';
 import type {
   Time,
   KeysFromTime,
 } from '../../../types/global-state-types/GlobalTypes';
+import { useDispatch, useSelector } from 'react-redux';
+import { inputsState } from '../../../features/logicSlice';
+import type { AppDispatch, RootState } from '../../../store/store';
 import './Field.scss';
 
 type Props = {
   name: KeysFromTime;
   value: string;
-  setTime: React.Dispatch<React.SetStateAction<Time>>;
   placeholder: string;
 };
 
 function Field(props: Props) {
-  const { name, value, setTime, placeholder } = props;
+  const { name, value, placeholder } = props;
+  const time: Time = useSelector(
+    (state: RootState): Time => state.logic.entryInput
+  );
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <>
       <input
@@ -25,10 +30,7 @@ function Field(props: Props) {
           const value: string = e.target.value;
           if (!/^\d*$/.test(value)) return;
 
-          setTime((prevState: Time) => ({
-            ...prevState,
-            [name]: value,
-          }));
+          dispatch(inputsState({ ...time, [name]: value }));
         }}
         placeholder={placeholder}
       />
