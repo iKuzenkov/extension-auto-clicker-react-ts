@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { quantityState } from '../../features/logicSlice';
+import { quantityState, setCountDown } from '../../features/logicSlice';
 import type {
   SelectedElement,
   Delay,
@@ -17,6 +17,7 @@ function useTimerLogic() {
   const delay: Delay = useSelector(
     (state: RootState): Delay => state.logic.delayInMilliseconds
   );
+
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dispatch = useDispatch<AppDispatch>();
 
@@ -34,6 +35,8 @@ function useTimerLogic() {
     }
 
     const tick = (): void => {
+      dispatch(setCountDown(delay));
+
       timerRef.current = setTimeout(() => {
         selectedElement.click();
         dispatch(quantityState());
