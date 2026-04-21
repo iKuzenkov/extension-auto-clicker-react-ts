@@ -2,9 +2,11 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type {
   SelectedElement,
   Delay,
+  Time,
 } from '../types/global-state-types/GlobalTypes';
 
 type State = {
+  entryInput: Time;
   selectedElement: SelectedElement;
   delayInMilliseconds: Delay;
   isRunningTimerState: boolean;
@@ -14,6 +16,7 @@ type State = {
 };
 
 const initialState: State = {
+  entryInput: { hour: '', minute: '', second: '' },
   selectedElement: null,
   delayInMilliseconds: 0,
   isRunningTimerState: false,
@@ -26,6 +29,9 @@ const logicSlice = createSlice({
   name: 'logic',
   initialState,
   reducers: {
+    inputsState: (state, action: PayloadAction<Time>): void => {
+      state.entryInput = action.payload;
+    },
     savedElement: (state, action: PayloadAction<SelectedElement>): void => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       state.selectedElement = action.payload as any;
@@ -48,10 +54,12 @@ const logicSlice = createSlice({
     timeUntilNextClickResult: (state, action: PayloadAction<string>): void => {
       state.timeUntilNextClick = action.payload;
     },
+    resetLogicState: () => initialState,
   },
 });
 
 export const {
+  inputsState,
   savedElement,
   delayForTimer,
   timerState,
@@ -59,5 +67,6 @@ export const {
   setCountDown,
   decreaseCountDown,
   timeUntilNextClickResult,
+  resetLogicState,
 } = logicSlice.actions;
 export default logicSlice.reducer;
