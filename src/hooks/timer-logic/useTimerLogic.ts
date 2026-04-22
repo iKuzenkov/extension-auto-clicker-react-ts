@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { quantityState, setCountDown } from '../../features/logicSlice';
 import type {
   SelectedElement,
   Delay,
 } from '../../types/global-state-types/GlobalTypes';
-import type { RootState } from '../../store/store';
+import type { AppDispatch, RootState } from '../../store/store';
 
 function useTimerLogic() {
   const isRunning: boolean = useSelector(
@@ -18,6 +19,7 @@ function useTimerLogic() {
   );
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const clear = (): void => {
@@ -33,8 +35,11 @@ function useTimerLogic() {
     }
 
     const tick = (): void => {
+      dispatch(setCountDown(delay));
+
       timerRef.current = setTimeout(() => {
         selectedElement.click();
+        dispatch(quantityState());
         tick();
       }, delay);
     };
@@ -44,6 +49,6 @@ function useTimerLogic() {
     return (): void => {
       clear();
     };
-  }, [isRunning, selectedElement, delay]);
+  }, [dispatch, isRunning, selectedElement, delay]);
 }
 export default useTimerLogic;

@@ -1,17 +1,23 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../ReusableComponents/Button/Button';
+import { statusMessage } from '../../features/uiSlice';
+import { resetLogicState } from '../../features/logicSlice';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
-import type { RootState } from '../../store/store';
+import type { AppDispatch, RootState } from '../../store/store';
 import './ButtonReset.scss';
 
 function ButtonReset() {
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const dispatch = useDispatch<AppDispatch>();
 
-  const onResetClick = () => {};
+  const onResetClick = () => {
+    dispatch(resetLogicState());
+    dispatch(statusMessage('select a target'));
+  };
 
   return (
     <>
-      <div id="acext-button-reset-ss" className={`acext-${state}-ss`}>
+      <div id="acext-button-reset-ss" className={`acext-${theme}-ss`}>
         <Button onClick={onResetClick} title="▶️ Reset" />
       </div>
     </>

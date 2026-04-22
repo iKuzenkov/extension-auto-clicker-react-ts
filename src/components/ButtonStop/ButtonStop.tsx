@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { timerState } from '../../features/logicSlice';
+import {
+  timerState,
+  timeUntilNextClickResult,
+  setCountDown,
+} from '../../features/logicSlice';
 import { statusMessage } from '../../features/uiSlice';
 import Button from '../ReusableComponents/Button/Button';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
@@ -13,6 +17,8 @@ function ButtonStop() {
   const onStopClick = () => {
     dispatch(timerState(false));
     dispatch(statusMessage('stopped'));
+    dispatch(setCountDown(0));
+    dispatch(timeUntilNextClickResult('00h:00m:00s'));
   };
 
   return (

@@ -22,6 +22,28 @@ function useInputValidation(time: Time): Delay {
     if (s > 59) {
       dispatch(statusMessage('max 59 seconds'));
     }
+
+    if (h > 0 && h < 10000) {
+      dispatch(statusMessage('time inputting'));
+    }
+    if (m > 0 && m < 59) {
+      dispatch(statusMessage('time inputting'));
+    }
+    if (s > 0 && s < 59) {
+      dispatch(statusMessage('time inputting'));
+    }
+
+    if (h > 10000 && m >= 0 && m < 59 && s >= 0 && s < 59) {
+      dispatch(statusMessage('max 10.000 hours'));
+    }
+
+    if (h >= 0 && h < 10000 && m > 59 && s >= 0 && s < 59) {
+      dispatch(statusMessage('max 59 minutes'));
+    }
+
+    if (h >= 0 && h < 10000 && m >= 0 && m < 59 && s > 59) {
+      dispatch(statusMessage('max 59 seconds'));
+    }
   }, [dispatch, h, m, s]);
 
   const delay: Delay = delayInMilliseconds(h, m, s);
