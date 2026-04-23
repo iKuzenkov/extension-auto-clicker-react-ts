@@ -7,10 +7,10 @@ import './Title.scss';
 function Title(props: Props) {
   const { title } = props;
 
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
-      <div id="acext-title-ss" className={`acext-${state}-ss`}>
+      <div id="acext-title-ss" className={`acext-${theme}-ss`}>
         <span>{title}</span>
       </div>
     </>

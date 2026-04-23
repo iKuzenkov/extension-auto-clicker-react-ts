@@ -3,14 +3,14 @@ import type { Props } from './Types';
 import './Button.scss';
 
 function ButtonInner(
-  { onClick, title, theme }: Props,
+  { onClick, title }: Props,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   return (
     <>
       <button
         type="button"
-        className={`acext-button-ss acext-${theme}-ss`}
+        className={`acext-button-ss`}
         onClick={onClick}
         ref={ref}
       >

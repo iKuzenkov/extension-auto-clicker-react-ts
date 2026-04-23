@@ -6,7 +6,7 @@ import type { RootState } from '../../store/store';
 import './SelectTargetButton.scss';
 
 function SelectTargetButton() {
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
 
   const { startSelecting } = useSaveElement();
 
@@ -14,7 +14,7 @@ function SelectTargetButton() {
     <>
       <div
         id="acext-select-target-button-container-ss"
-        className={`acext-${state}-ss`}
+        className={`acext-${theme}-ss`}
       >
         <Button onClick={startSelecting} title="🎯 Select Target" />
       </div>

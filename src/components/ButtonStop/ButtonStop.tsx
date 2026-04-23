@@ -11,7 +11,7 @@ import type { AppDispatch, RootState } from '../../store/store';
 import './ButtonStop.scss';
 
 function ButtonStop() {
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const dispatch = useDispatch<AppDispatch>();
 
   const onStopClick = () => {
@@ -23,7 +23,7 @@ function ButtonStop() {
 
   return (
     <>
-      <div id="acext-button-stop-ss" className={`acext-${state}-ss`}>
+      <div id="acext-button-stop-ss" className={`acext-${theme}-ss`}>
         <Button onClick={onStopClick} title="▶️ Stop" />
       </div>
     </>

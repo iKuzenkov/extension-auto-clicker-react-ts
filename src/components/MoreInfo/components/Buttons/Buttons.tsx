@@ -5,7 +5,7 @@ import type { Theme } from '../../../../types/global-state-types/GlobalTypes';
 import './Buttons.scss';
 
 function Buttons() {
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
       <div id="acext-buttons-ss">
@@ -13,7 +13,7 @@ function Buttons() {
           <Link to=".." className="acext-link-to-source-ss">
             <button
               type="button"
-              className={`acext-info-btn-ss acext-${state}-ss`}
+              className={`acext-info-btn-ss acext-${theme}-ss`}
             >
               ⬅
             </button>
@@ -28,7 +28,7 @@ function Buttons() {
           >
             <button
               type="button"
-              className={`acext-info-btn-ss acext-${state}-ss`}
+              className={`acext-info-btn-ss acext-${theme}-ss`}
             >
               🌐
             </button>
@@ -43,7 +43,7 @@ function Buttons() {
           >
             <button
               type="button"
-              className={`acext-info-btn-ss acext-${state}-ss`}
+              className={`acext-info-btn-ss acext-${theme}-ss`}
             >
               ✉️
             </button>
@@ -58,7 +58,7 @@ function Buttons() {
           >
             <button
               type="button"
-              className={`acext-info-btn-ss acext-${state}-ss`}
+              className={`acext-info-btn-ss acext-${theme}-ss`}
             >
               ☕
             </button>

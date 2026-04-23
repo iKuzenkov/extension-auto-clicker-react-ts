@@ -37,13 +37,12 @@ function Toolbar(props: Props) {
   return (
     <>
       <div id="acext-toolbar-container-ss" className={`acext-${theme}-ss`}>
-        <Button title="⇕⇕⇕" ref={dragHandleRef} theme={theme} />
+        <Button title="⇕⇕⇕" ref={dragHandleRef} />
         <Button
           title={theme === 'light' ? '🌙' : '☀️'}
           onClick={onThemeClick}
-          theme={theme}
         />
-        <Button title="👁" onClick={onHideShowClick} theme={theme} />
+        <Button title="👁" onClick={onHideShowClick} />
       </div>
     </>
   );
