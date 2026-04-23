@@ -1,7 +1,7 @@
-import type { RefObject } from 'react';
+import type { Theme } from '../../../types/global-state-types/GlobalTypes';
 
 export type Props = {
   onClick?: () => void;
   title: string;
-  ref?: RefObject<HTMLButtonElement | null>;
+  theme: Theme;
 };
