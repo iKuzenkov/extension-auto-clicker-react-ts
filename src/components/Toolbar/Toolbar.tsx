@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme, toggleHideShow } from '../../features/uiSlice';
 import useDrag from '../../hooks/drag-n-drop/useDrag';
@@ -26,22 +26,23 @@ function Toolbar(props: Props) {
   useDrag({ panelRef, dragHandleRef });
   useUIStorage({ theme, isVisible });
 
-  const onThemeClick = (): void => {
+  const onThemeClick = useCallback((): void => {
     dispatch(toggleTheme(theme === 'light' ? 'dark' : 'light'));
-  };
-  const onHideShowClick = (): void => {
+  }, [dispatch, theme]);
+
+  const onHideShowClick = useCallback((): void => {
     dispatch(toggleHideShow(isVisible === true ? false : true));
-  };
+  }, [dispatch, isVisible]);
 
   return (
     <>
       <div id="acext-toolbar-container-ss" className={`acext-${theme}-ss`}>
         <Button title="⇕⇕⇕" ref={dragHandleRef} />
         <Button
-          onClick={onThemeClick}
           title={theme === 'light' ? '🌙' : '☀️'}
+          onClick={onThemeClick}
         />
-        <Button onClick={onHideShowClick} title="👁" />
+        <Button title="👁" onClick={onHideShowClick} />
       </div>
     </>
   );

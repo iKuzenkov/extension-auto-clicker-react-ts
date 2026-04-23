@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { statusMessage } from '../../features/uiSlice';
 import handleElementClick from './logic/handleElementClick';
@@ -6,7 +6,7 @@ import type { AppDispatch } from '../../store/store';
 import type { SelectedElement } from '../../types/global-state-types/GlobalTypes';
 
 function useSaveElement() {
-  const [isSelecting, setIsSelecting] = useState(false);
+  const [isSelecting, setIsSelecting] = useState<boolean>(false);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -28,10 +28,10 @@ function useSaveElement() {
   }, [dispatch, isSelecting]);
 
   return {
-    startSelecting: (): void => {
+    startSelecting: useCallback((): void => {
       setIsSelecting(true);
       dispatch(statusMessage('expecting a target'));
-    },
+    }, [dispatch]),
   };
 }
 

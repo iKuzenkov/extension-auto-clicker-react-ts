@@ -10,6 +10,7 @@ import type {
 } from '../../types/global-state-types/GlobalTypes';
 import type { AppDispatch, RootState } from '../../store/store';
 import './ButtonStart.scss';
+import { useCallback } from 'react';
 
 function ButtonStart() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
@@ -21,7 +22,7 @@ function ButtonStart() {
   );
   const dispatch = useDispatch<AppDispatch>();
 
-  const onStartClick = (): void => {
+  const onStartClick = useCallback(() => {
     if (selectedElement === null) {
       dispatch(statusMessage('target not selected'));
       return;
@@ -32,7 +33,7 @@ function ButtonStart() {
     }
     dispatch(timerState(true));
     dispatch(statusMessage('working...'));
-  };
+  }, [dispatch, selectedElement, delay]);
 
   useTimerLogic();
 

@@ -1,17 +1,16 @@
-import { useSelector } from 'react-redux';
-import type { RootState } from '../../../store/store';
-import type { Theme } from '../../../types/global-state-types/GlobalTypes';
+import { type ForwardedRef, forwardRef, memo } from 'react';
 import type { Props } from './Types';
 import './Button.scss';
 
-function Button({ onClick, title, ref }: Props) {
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
-
+function ButtonInner(
+  { onClick, title }: Props,
+  ref: ForwardedRef<HTMLButtonElement>
+) {
   return (
     <>
       <button
         type="button"
-        className={`acext-button-ss acext-${state}-ss`}
+        className={`acext-button-ss`}
         onClick={onClick}
         ref={ref}
       >
@@ -20,5 +19,7 @@ function Button({ onClick, title, ref }: Props) {
     </>
   );
 }
+
+const Button = memo(forwardRef(ButtonInner));
 
 export default Button;

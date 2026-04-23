@@ -5,15 +5,16 @@ import { resetLogicState } from '../../features/logicSlice';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import type { AppDispatch, RootState } from '../../store/store';
 import './ButtonReset.scss';
+import { useCallback } from 'react';
 
 function ButtonReset() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const dispatch = useDispatch<AppDispatch>();
 
-  const onResetClick = () => {
+  const onResetClick = useCallback(() => {
     dispatch(resetLogicState());
     dispatch(statusMessage('select a target'));
-  };
+  }, [dispatch]);
 
   return (
     <>

@@ -6,12 +6,22 @@ import { store } from './store/store';
 import App from './App';
 import './styles/styles.scss';
 
-const rootElement: HTMLDivElement = document.createElement('div');
-rootElement.id = 'auto-clicker-root';
-document.body.appendChild(rootElement);
+const isExtension =
+  typeof chrome !== 'undefined' &&
+  typeof chrome.runtime !== 'undefined' &&
+  !!chrome.runtime.id;
+
+const rootElement: HTMLDivElement =
+  (document.getElementById('auto-clicker-root') as HTMLDivElement) ||
+  (() => {
+    const el = document.createElement('div');
+    el.id = 'auto-clicker-root';
+    document.body.appendChild(el);
+    return el;
+  })();
 
 export function RootWrapper() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(!isExtension);
   const visibleRef = useRef<boolean>(visible);
 
   useEffect(() => {
@@ -19,6 +29,8 @@ export function RootWrapper() {
   }, [visible]);
 
   useEffect(() => {
+    if (!isExtension) return;
+
     function onMessage(
       msg: MessageTypes,
       _sender: chrome.runtime.MessageSender,
@@ -45,7 +57,20 @@ export function RootWrapper() {
     };
   }, []);
 
-  return visible ? <App /> : null;
+  return (
+    <>
+      {!isExtension && (
+        <button
+          style={{ position: 'fixed', top: 10, right: 10, zIndex: 9999 }}
+          onClick={() => setVisible((v) => !v)}
+        >
+          toggle auto-clicker
+        </button>
+      )}
+
+      {visible ? <App /> : null}
+    </>
+  );
 }
 
 const root = createRoot(rootElement);

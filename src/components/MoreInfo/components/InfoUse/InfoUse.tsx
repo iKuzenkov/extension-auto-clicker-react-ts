@@ -8,10 +8,10 @@ import './InfoUse.scss';
 function InfoUse(props: Props) {
   const { info } = props;
 
-  const state: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
-      <div id="acext-info-use-ss" className={`acext-${state}-ss`}>
+      <div id="acext-info-use-ss" className={`acext-${theme}-ss`}>
         <ol className="acext-info-use-ol-ss">
           {info.map(({ id, text }: Element) => (
             <li key={id} className="acext-list-of-li-ss">
