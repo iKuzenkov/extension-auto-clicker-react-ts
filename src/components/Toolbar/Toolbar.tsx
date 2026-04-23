@@ -30,9 +30,9 @@ function Toolbar(props: Props) {
     dispatch(toggleTheme(theme === 'light' ? 'dark' : 'light'));
   }, [dispatch, theme]);
 
-  const onHideShowClick = (): void => {
+  const onHideShowClick = useCallback((): void => {
     dispatch(toggleHideShow(isVisible === true ? false : true));
-  };
+  }, [dispatch, isVisible]);
 
   return (
     <>

@@ -9,17 +9,18 @@ import Button from '../ReusableComponents/Button/Button';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import type { AppDispatch, RootState } from '../../store/store';
 import './ButtonStop.scss';
+import { useCallback } from 'react';
 
 function ButtonStop() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const dispatch = useDispatch<AppDispatch>();
 
-  const onStopClick = () => {
+  const onStopClick = useCallback(() => {
     dispatch(timerState(false));
     dispatch(statusMessage('stopped'));
     dispatch(setCountDown(0));
     dispatch(timeUntilNextClickResult('00h:00m:00s'));
-  };
+  }, [dispatch]);
 
   return (
     <>
