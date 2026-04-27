@@ -20,6 +20,9 @@ function Toolbar(props: Props) {
   const isVisible: HideShow = useSelector(
     (state: RootState): HideShow => state.ui.isVisible
   );
+  const isDrag: boolean = useSelector(
+    (state: RootState): boolean => state.logic.isDrag
+  );
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -31,18 +34,36 @@ function Toolbar(props: Props) {
   }, [dispatch, theme]);
 
   const onHideShowClick = useCallback((): void => {
-    dispatch(toggleHideShow(isVisible === true ? false : true));
+    dispatch(toggleHideShow(!isVisible));
   }, [dispatch, isVisible]);
 
   return (
     <>
       <div id="acext-toolbar-container-ss" className={`acext-${theme}-ss`}>
-        <Button title="⇕⇕⇕" ref={dragHandleRef} />
         <Button
-          title={theme === 'light' ? '🌙' : '☀️'}
+          text="⇕⇕⇕"
+          title="move"
+          aria-label="drag the panel to any place on the page"
+          cursor={isDrag ? 'grabbing' : 'grab'}
+          theme={theme}
+          ref={dragHandleRef}
+        />
+        <Button
+          text={theme === 'light' ? '🌙' : '☀️'}
+          title={theme === 'light' ? 'on dark' : 'on light'}
+          aria-label={`switch the topic on ${theme === 'light' ? 'the dark' : 'the light'}`}
+          cursor="pointer"
+          theme={theme}
           onClick={onThemeClick}
         />
-        <Button title="👁" onClick={onHideShowClick} />
+        <Button
+          text="👁"
+          title={isVisible ? 'hide' : 'show'}
+          aria-label={`you can ${isVisible ? 'hide the panel' : 'show the panel'}`}
+          cursor="pointer"
+          theme={theme}
+          onClick={onHideShowClick}
+        />
       </div>
     </>
   );

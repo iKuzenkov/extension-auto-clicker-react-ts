@@ -13,6 +13,7 @@ type State = {
   quantityClicks: number;
   countDown: number;
   timeUntilNextClick: string;
+  isDrag: boolean;
 };
 
 const initialState: State = {
@@ -23,6 +24,7 @@ const initialState: State = {
   quantityClicks: 0,
   countDown: 0,
   timeUntilNextClick: '00h:00m:00s',
+  isDrag: false,
 };
 
 const logicSlice = createSlice({
@@ -54,6 +56,9 @@ const logicSlice = createSlice({
     timeUntilNextClickResult: (state, action: PayloadAction<string>): void => {
       state.timeUntilNextClick = action.payload;
     },
+    dragState: (state, action: PayloadAction<boolean>): void => {
+      state.isDrag = action.payload;
+    },
     resetLogicState: () => initialState,
   },
 });
@@ -67,6 +72,7 @@ export const {
   setCountDown,
   decreaseCountDown,
   timeUntilNextClickResult,
+  dragState,
   resetLogicState,
 } = logicSlice.actions;
 export default logicSlice.reducer;

@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { dragState } from '../../features/logicSlice';
+import type { AppDispatch } from '../../store/store';
 import type { Props } from './Types';
 
 function useDrag(props: Props): void {
   const { panelRef, dragHandleRef } = props;
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const wrapper = panelRef.current;
@@ -16,6 +20,7 @@ function useDrag(props: Props): void {
 
     const onMouseDown = (e: MouseEvent): void => {
       isDragging = true;
+      dispatch(dragState(isDragging));
 
       offsetX = e.clientX - wrapper.offsetLeft;
       offsetY = e.clientY - wrapper.offsetTop;
@@ -41,6 +46,7 @@ function useDrag(props: Props): void {
 
     const onMouseUp = (): void => {
       isDragging = false;
+      dispatch(dragState(isDragging));
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
     };
@@ -52,7 +58,7 @@ function useDrag(props: Props): void {
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
     };
-  }, [panelRef, dragHandleRef]);
+  }, [dispatch, panelRef, dragHandleRef]);
 }
 
 export default useDrag;

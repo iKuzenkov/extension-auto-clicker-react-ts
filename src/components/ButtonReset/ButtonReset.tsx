@@ -19,7 +19,13 @@ function ButtonReset() {
   return (
     <>
       <div id="acext-button-reset-ss" className={`acext-${theme}-ss`}>
-        <Button onClick={onResetClick} title="▶️ Reset" />
+        <Button
+          text="♻️ Reset"
+          title="Reset"
+          cursor="pointer"
+          theme={theme}
+          onClick={onResetClick}
+        />
       </div>
     </>
   );

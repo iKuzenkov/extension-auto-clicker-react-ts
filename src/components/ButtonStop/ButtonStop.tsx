@@ -25,7 +25,13 @@ function ButtonStop() {
   return (
     <>
       <div id="acext-button-stop-ss" className={`acext-${theme}-ss`}>
-        <Button onClick={onStopClick} title="▶️ Stop" />
+        <Button
+          text="⏹️ Stop"
+          title="Stop"
+          cursor="pointer"
+          theme={theme}
+          onClick={onStopClick}
+        />
       </div>
     </>
   );

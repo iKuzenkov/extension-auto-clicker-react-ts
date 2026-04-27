@@ -11,19 +11,29 @@ import CountDown from '../CountDown/CountDown';
 import HelperStatus from '../HelperStatus/HelperStatus';
 import Info from '../Info/Info';
 import type { RootState } from '../../store/store';
-import type { HideShow } from '../../types/global-state-types/GlobalTypes';
+import type {
+  HideShow,
+  Theme,
+} from '../../types/global-state-types/GlobalTypes';
 import './Main.scss';
 
 function Main() {
   const isVisible: HideShow = useSelector(
     (state: RootState): HideShow => state.ui.isVisible
   );
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const panelRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
-      <div id="acext-panel-container-ss" ref={panelRef}>
-        <div id="acext-grid-layout-ss">
+      <div
+        id="acext-panel-container-ss"
+        className={`acext-${theme}-ss`}
+        ref={panelRef}
+        tabIndex={0}
+        aria-label="Autoclicker extension"
+      >
+        <div id="acext-grid-layout-ss" className={`acext-${theme}-ss`}>
           <Toolbar panelRef={panelRef} />
           {isVisible && <SelectTargetButton />}
           {isVisible && <Inputs />}

@@ -11,7 +11,8 @@ body {
   color: #fff;
   font-family: sans-serif;
 }
-button {
+
+button#toggle {
   width: 100px;
   height: 40px;
   font-size: 16px;
@@ -20,4 +21,8 @@ button {
   cursor: pointer;
   background: #444;
   color: #fff;
+
+  &:focus-visible {
+    outline: 3px solid #d50fe3;
+  }
 }

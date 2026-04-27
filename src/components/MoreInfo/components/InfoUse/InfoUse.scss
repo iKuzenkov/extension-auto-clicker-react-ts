@@ -8,13 +8,16 @@
   justify-content: flex-start;
   align-content: center;
   overflow-y: auto;
+  margin: 2px;
   @include scrollbar;
 
   &.acext-light-ss {
+    color: #000;
     background: $bg-primary;
   }
 
   &.acext-dark-ss {
+    color: $text-dark-primary;
     background: $bg-dark-primary;
   }
 
@@ -25,6 +28,20 @@
     .acext-list-of-li-ss {
       list-style-type: none;
       padding-left: 0;
+
+      &.acext-light-ss {
+        &:focus-visible {
+          outline: 2px solid $outline-light-focus-visible;
+          background: $bg-light-focus-visible;
+        }
+      }
+
+      &.acext-dark-ss {
+        &:focus-visible {
+          outline: 2px solid $outline-dark-focus-visible;
+          background: $bg-dark-focus-visible;
+        }
+      }
     }
   }
 }

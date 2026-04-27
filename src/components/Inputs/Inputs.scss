@@ -7,17 +7,35 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 4px;
 
   &.acext-light-ss {
+    color: #000;
     background: $bg-primary;
+
+    input {
+      &:focus {
+        outline: 4px solid $outline-light-focus-visible;
+      }
+    }
   }
 
   &.acext-dark-ss {
+    color: $text-dark-primary;
     background: $bg-dark-primary;
 
-    input::placeholder {
-      color: #dedbda;
+    input {
+      border: 1px solid $border-dark-primary;
       background: $bg-dark-primary-inputs;
+
+      &:focus {
+        background: $bg-dark-focus;
+        outline: 4px solid $bg-dark-focus-visible;
+      }
+
+      &::placeholder {
+        color: #dedbda;
+      }
     }
   }
 
@@ -25,16 +43,12 @@
     display: flex;
     width: 100%;
 
-    input:nth-child(1) {
-      margin-right: 5px;
-    }
+    input {
+      color: inherit;
 
-    input:nth-child(2) {
-      margin-right: 5px;
-    }
-
-    input::placeholder {
-      text-align: center;
+      &::placeholder {
+        text-align: center;
+      }
     }
   }
 }

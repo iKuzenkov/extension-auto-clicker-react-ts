@@ -3,7 +3,14 @@
 
 #acext-buttons-ss {
   display: flex;
-  background: $bg-primary;
+
+  &.acext-light-ss {
+    background: $bg-primary;
+  }
+
+  &.acext-dark-ss {
+    background: $bg-dark-primary;
+  }
 
   .acext-info-wrap-ss {
     flex: 1;
@@ -17,14 +24,44 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 100%;
+        border-radius: 30%;
+        cursor: pointer;
 
         &.acext-light-ss {
+          border: 1px solid $bg-dark-primary;
           background: $bg-primary;
+
+          &:hover {
+            background: $hover-light;
+          }
+
+          &:active {
+            background: $active-light;
+          }
+
+          &:focus-visible {
+            outline: 2px solid $outline-light-focus-visible;
+            background: $bg-light-focus-visible;
+          }
         }
 
         &.acext-dark-ss {
+          color: $bg-primary;
+          border: 1px solid $bg-primary;
           background: $bg-dark-primary;
+
+          &:hover {
+            background: $hover-dark;
+          }
+
+          &:active {
+            background: $active-dark;
+          }
+
+          &:focus-visible {
+            outline: 2px solid $outline-dark-focus-visible;
+            background: $bg-dark-focus-visible;
+          }
         }
       }
     }

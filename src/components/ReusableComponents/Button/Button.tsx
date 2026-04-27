@@ -3,18 +3,21 @@ import type { Props } from './Types';
 import './Button.scss';
 
 function ButtonInner(
-  { onClick, title }: Props,
+  { onClick, text, 'aria-label': ariaLabel, title, cursor, theme }: Props,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   return (
     <>
       <button
         type="button"
-        className={`acext-button-ss`}
+        title={title}
+        aria-label={ariaLabel}
+        className={`acext-button-ss acext-${theme}-ss`}
         onClick={onClick}
         ref={ref}
+        style={{ cursor: cursor }}
       >
-        {title}
+        {text}
       </button>
     </>
   );

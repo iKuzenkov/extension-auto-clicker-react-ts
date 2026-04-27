@@ -22,7 +22,11 @@ function CountDown() {
   return (
     <>
       <div id="acext-next-click-ss" className={`acext-${theme}-ss`}>
-        <div className="acext-time-next-click-ss">
+        <div
+          title="Сountdown to click"
+          className={`acext-time-next-click-ss acext-${theme}-ss`}
+          tabIndex={0}
+        >
           Next Click: {timeUntilClick}
         </div>
       </div>

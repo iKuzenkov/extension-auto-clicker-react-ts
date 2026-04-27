@@ -2,11 +2,26 @@
 @use '@/styles/abstracts/variables' as *;
 
 #acext-title-ss {
+  font-size: 1.25rem;
+  margin: 2px;
+
   &.acext-light-ss {
+    color: #000;
     background: $bg-primary;
+
+    &:focus-visible {
+      outline: 2px solid $outline-light-focus-visible;
+      background: $bg-light-focus-visible;
+    }
   }
 
   &.acext-dark-ss {
+    color: $text-dark-primary;
     background: $bg-dark-primary;
+
+    &:focus-visible {
+      outline: 2px solid $outline-dark-focus-visible;
+      background: $bg-dark-focus-visible;
+    }
   }
 }

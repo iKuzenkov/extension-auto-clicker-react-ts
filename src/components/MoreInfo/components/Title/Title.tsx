@@ -10,7 +10,7 @@ function Title(props: Props) {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
-      <div id="acext-title-ss" className={`acext-${theme}-ss`}>
+      <div id="acext-title-ss" className={`acext-${theme}-ss`} tabIndex={0}>
         <span>{title}</span>
       </div>
     </>

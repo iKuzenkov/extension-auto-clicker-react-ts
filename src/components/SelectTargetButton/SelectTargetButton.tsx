@@ -16,7 +16,13 @@ function SelectTargetButton() {
         id="acext-select-target-button-container-ss"
         className={`acext-${theme}-ss`}
       >
-        <Button onClick={startSelecting} title="🎯 Select Target" />
+        <Button
+          text="🎯 Select Target"
+          title="Select a target"
+          cursor="pointer"
+          theme={theme}
+          onClick={startSelecting}
+        />
       </div>
     </>
   );

@@ -6,10 +6,12 @@
   flex-direction: row;
 
   &.acext-light-ss {
+    color: #000;
     background: $bg-primary;
   }
 
   &.acext-dark-ss {
+    color: $text-dark-primary;
     background: $bg-dark-primary;
   }
 
@@ -18,9 +20,25 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin: 1px 0.3rem;
+    margin: 2px 0.3rem;
     width: 100%;
     border: $border-primary;
     border-radius: $border-radius-primary;
+
+    &.acext-light-ss {
+      &:focus-visible {
+        outline: 2px solid $outline-light-focus-visible;
+        background: $bg-light-focus-visible;
+      }
+    }
+
+    &.acext-dark-ss {
+      border: 1px solid $border-dark-primary;
+
+      &:focus-visible {
+        outline: 2px solid $outline-dark-focus-visible;
+        background: $bg-dark-focus-visible;
+      }
+    }
   }
 }

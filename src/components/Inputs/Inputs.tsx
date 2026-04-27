@@ -28,9 +28,27 @@ function Inputs() {
     <>
       <div id="acext-inputs-container-ss" className={`acext-${theme}-ss`}>
         <div className="acext-timer-inputs-ss">
-          <Field name="hour" value={time.hour} placeholder="h" />
-          <Field name="minute" value={time.minute} placeholder="m" />
-          <Field name="second" value={time.second} placeholder="s" />
+          <Field
+            name="hour"
+            title="hours"
+            aria-label="enter from one hour to ten thousand hours"
+            value={time.hour}
+            placeholder="h"
+          />
+          <Field
+            name="minute"
+            title="minutes"
+            aria-label="enter between one and fifty-nine minutes"
+            value={time.minute}
+            placeholder="m"
+          />
+          <Field
+            name="second"
+            title="seconds"
+            aria-label="enter between one and fifty-nine seconds"
+            value={time.second}
+            placeholder="s"
+          />
         </div>
       </div>
     </>

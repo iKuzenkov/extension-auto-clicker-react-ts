@@ -8,56 +8,67 @@ function Buttons() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
-      <div id="acext-buttons-ss">
-        <div className="acext-info-wrap-ss">
-          <Link to=".." className="acext-link-to-source-ss">
+      <div id="acext-buttons-ss" className={`acext-${theme}-ss`}>
+        <div className="acext-info-wrap-ss" tabIndex={-1}>
+          <Link to=".." className="acext-link-to-source-ss" tabIndex={-1}>
             <button
               type="button"
               className={`acext-info-btn-ss acext-${theme}-ss`}
+              title="Back"
+              aria-label="back"
             >
               ⬅
             </button>
           </Link>
         </div>
-        <div className="acext-info-wrap-ss">
+        <div className="acext-info-wrap-ss" tabIndex={-1}>
           <a
             href="https://browser-extensions-hub.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="acext-link-to-source-ss"
+            tabIndex={-1}
           >
             <button
               type="button"
+              title="Website"
+              aria-label="open website"
               className={`acext-info-btn-ss acext-${theme}-ss`}
             >
               🌐
             </button>
           </a>
         </div>
-        <div className="acext-info-wrap-ss">
+        <div className="acext-info-wrap-ss" tabIndex={-1}>
           <a
             href="https://browser-extensions-hub.vercel.app/contact"
             target="_blank"
             rel="noopener noreferrer"
             className="acext-link-to-source-ss"
+            tabIndex={-1}
           >
             <button
               type="button"
+              title="Contact"
+              aria-label="open сontact"
               className={`acext-info-btn-ss acext-${theme}-ss`}
             >
               ✉️
             </button>
           </a>
         </div>
-        <div className="acext-info-wrap-ss">
+        <div className="acext-info-wrap-ss" tabIndex={-1}>
           <a
             href="https://browser-extensions-hub.vercel.app/donate"
             target="_blank"
             rel="noopener noreferrer"
             className="acext-link-to-source-ss"
+            tabIndex={-1}
           >
             <button
               type="button"
+              title="Coffee"
+              aria-label="donate"
               className={`acext-info-btn-ss acext-${theme}-ss`}
             >
               ☕
