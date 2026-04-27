@@ -13,6 +13,14 @@
     grid-template-rows: 0.1fr 200px 0.1fr;
     grid-template-columns: 200px;
 
+    &.acext-light-ss {
+      background: $bg-primary;
+    }
+
+    &.acext-dark-ss {
+      background: $bg-dark-primary;
+    }
+
     #acext-title-ss {
       grid-area: title;
     }

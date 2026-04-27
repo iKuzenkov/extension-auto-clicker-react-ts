@@ -12,6 +12,7 @@ function updateButton(): void {
   if (!btn) return;
 
   btn.textContent = isOn ? 'Hide' : 'Show';
+  btn.title = isOn ? 'turn off autoclick' : 'turn on autoclick';
   btn.style.backgroundColor = isOn ? 'red' : 'green';
   btn.style.color = '#fff';
 }

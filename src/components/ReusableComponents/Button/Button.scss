@@ -6,17 +6,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.1rem;
+  margin: 2px;
   flex: 1;
-  color: black;
-  cursor: pointer;
   @include re-button($border-primary, $border-radius-primary, $padding-primary);
 
   &.acext-light-ss {
+    color: #000;
     background: $bg-primary;
+
+    &:hover {
+      background: $hover-light;
+    }
+
+    &:active {
+      background: $active-light;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $outline-light-focus-visible;
+      background: $bg-light-focus-visible;
+    }
   }
 
   &.acext-dark-ss {
+    border: 1px solid $border-dark-primary;
+    color: $text-dark-primary;
     background: $bg-dark-primary;
+
+    &:hover {
+      background: $hover-dark;
+    }
+
+    &:active {
+      background: $active-dark;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $outline-dark-focus-visible;
+      background: $bg-dark-focus-visible;
+    }
   }
 }

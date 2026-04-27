@@ -12,7 +12,13 @@ function ClickCount() {
   return (
     <>
       <div id="acext-count-info-ss" className={`acext-${theme}-ss`}>
-        <div className="acext-count-click-ss">Clicks: {quantityClicks}</div>
+        <div
+          title="Quantity of clicks"
+          className={`acext-count-click-ss acext-${theme}-ss`}
+          tabIndex={0}
+        >
+          Clicks: {quantityClicks}
+        </div>
       </div>
     </>
   );

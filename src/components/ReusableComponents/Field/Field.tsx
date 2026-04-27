@@ -10,12 +10,14 @@ import './Field.scss';
 
 type Props = {
   name: KeysFromTime;
+  title: string;
   value: string;
   placeholder: string;
+  'aria-label': string;
 };
 
 function Field(props: Props) {
-  const { name, value, placeholder } = props;
+  const { name, title, 'aria-label': ariaLabel, value, placeholder } = props;
   const time: Time = useSelector(
     (state: RootState): Time => state.logic.entryInput
   );
@@ -24,6 +26,9 @@ function Field(props: Props) {
     <>
       <input
         type="text"
+        title={title}
+        name={name}
+        aria-label={ariaLabel}
         className="acext-input-ss"
         value={value}
         onChange={(e: ChangeEvent<HTMLInputElement>) => {

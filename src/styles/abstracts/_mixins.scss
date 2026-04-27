@@ -6,7 +6,7 @@
   box-sizing: border-box;
   top: 100px;
   left: 100px;
-  border: $border-primary;
+  outline: 2px solid $border-dark-primary;
   border-radius: $border-radius-primary;
   z-index: 9999999;
 }

@@ -11,10 +11,14 @@ function InfoUse(props: Props) {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   return (
     <>
-      <div id="acext-info-use-ss" className={`acext-${theme}-ss`}>
-        <ol className="acext-info-use-ol-ss">
+      <div id="acext-info-use-ss" className={`acext-${theme}-ss`} tabIndex={-1}>
+        <ol className="acext-info-use-ol-ss" tabIndex={-1}>
           {info.map(({ id, text }: Element) => (
-            <li key={id} className="acext-list-of-li-ss">
+            <li
+              key={id}
+              className={`acext-list-of-li-ss acext-${theme}-ss`}
+              tabIndex={0}
+            >
               {text}
             </li>
           ))}

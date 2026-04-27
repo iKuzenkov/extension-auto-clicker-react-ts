@@ -10,12 +10,17 @@ function Info() {
     <>
       <div id="acext-info-ss" className={`acext-${theme}-ss`}>
         <div className="acext-more-info-container-ss">
-          <Link to="more-info" className="acext-link-to-source-ss">
+          <Link
+            to="more-info"
+            className="acext-link-to-source-ss"
+            tabIndex={-1}
+          >
             <button
               type="button"
               className={`acext-more-info-btn-ss acext-${theme}-ss`}
+              title="How to use"
             >
-              more info
+              how to use
             </button>
           </Link>
         </div>

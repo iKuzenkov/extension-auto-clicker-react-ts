@@ -4,6 +4,19 @@
 #acext-panel-container-ss {
   @include container-styles;
 
+  &.acext-light-ss {
+    &:focus-visible {
+      outline: 4px solid $outline-light-focus-visible;
+    }
+  }
+
+  &.acext-dark-ss {
+    &:focus-visible {
+      outline: 4px solid $outline-dark-focus-visible;
+    }
+  }
+
+
   #acext-panel-container-ss::before,
   #acext-panel-container-ss::after {
     box-sizing: border-box;
@@ -22,8 +35,16 @@
       'nextClick'
       'helperStatus'
       'info';
-    grid-template-rows: 40px 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: 33px 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
     grid-template-columns: 200px;
+
+    &.acext-light-ss {
+      background: $bg-primary;
+    }
+
+    &.acext-dark-ss {
+      background: $bg-dark-primary;
+    }
 
     #acext-toolbar-container-ss {
       grid-area: toolbar;

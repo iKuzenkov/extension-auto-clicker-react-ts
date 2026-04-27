@@ -40,7 +40,13 @@ function ButtonStart() {
   return (
     <>
       <div id="acext-button-start-ss" className={`acext-${theme}-ss`}>
-        <Button onClick={onStartClick} title="▶️ Start" />
+        <Button
+          text="▶️ Start"
+          title="Start"
+          cursor="pointer"
+          theme={theme}
+          onClick={onStartClick}
+        />
       </div>
     </>
   );
