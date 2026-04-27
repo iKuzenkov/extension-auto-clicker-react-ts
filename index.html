@@ -1,17 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Extension Dev</title>
-  </head>
-  <body>
-    <div id="auto-clicker-root"></div>
-    <div class="test">Test Element</div>
-    <script type="module" src="/src/content.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0"
+  />
+  <title>Extension Dev</title>
+  <link
+    rel="stylesheet"
+    href="./dev-mode/css/index.css"
+  >
+</head>
+
+<body>
+<div id="auto-clicker-root"></div>
+
+<div id="color" class="box">Test Element</div>
+
+<button type="button" id="change-color">
+  Change color
+</button>
+
+<script type="module" src="dev-mode/ts/script.js"></script>
+<script type="module" src="./src/content.tsx"></script>
+</body>
 </html>
