@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import dataInfo from './data/dataInfo';
+import infoData from './data/infoData';
 import Title from './components/Title/Title';
 import InfoUse from './components/InfoUse/InfoUse';
 import Buttons from './components/Buttons/Buttons';
@@ -20,7 +20,7 @@ function MoreInfo() {
       setLoading(true);
     }, 400);
 
-    dataInfo()
+    infoData()
       .then(setData)
       .catch(() => setError(true))
       .finally(() => {
