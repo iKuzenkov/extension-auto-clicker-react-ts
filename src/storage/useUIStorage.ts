@@ -15,8 +15,9 @@ const useUIStorage = (props: Props): void => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    const savedTheme: string | null = localStorage.getItem('theme');
-    const savedHideShow: string | null = localStorage.getItem('hide-show');
+    const savedTheme: string | null = localStorage.getItem('acext-theme-ss');
+    const savedHideShow: string | null =
+      localStorage.getItem('acext-hide-show-ss');
 
     if (savedTheme === 'light' || savedTheme === 'dark') {
       dispatch(toggleTheme(savedTheme));
@@ -28,8 +29,8 @@ const useUIStorage = (props: Props): void => {
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    localStorage.setItem('hide-show', String(isVisible));
+    localStorage.setItem('acext-theme-ss', theme);
+    localStorage.setItem('acext-hide-show-ss', String(isVisible));
   }, [theme, isVisible]);
 };
 

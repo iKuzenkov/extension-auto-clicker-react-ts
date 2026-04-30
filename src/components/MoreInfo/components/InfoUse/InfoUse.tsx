@@ -19,7 +19,7 @@ function InfoUse(props: Props) {
               className={`acext-list-of-li-ss acext-${theme}-ss`}
               tabIndex={0}
             >
-              {text}
+              →{text}
             </li>
           ))}
         </ol>

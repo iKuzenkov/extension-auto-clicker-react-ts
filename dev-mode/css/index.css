@@ -1,0 +1,15 @@
+.box {
+  width: 200px;
+  height: 100px;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.box.active {
+  background: dodgerblue;
+}

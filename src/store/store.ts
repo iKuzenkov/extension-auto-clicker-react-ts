@@ -7,6 +7,13 @@ export const store = configureStore({
     ui: uiReducer,
     logic: logicReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredPaths: ['logic.selectedElement'],
+        ignoredActions: ['logic/savedElement'],
+      },
+    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

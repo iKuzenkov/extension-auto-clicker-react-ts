@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import getPanelPosition from '../../storage/panel-position/getPanelPosition';
 import { dragState } from '../../features/logicSlice';
 import type { AppDispatch } from '../../store/store';
 import type { Props } from './Types';
@@ -42,6 +43,8 @@ function useDrag(props: Props): void {
 
       wrapper.style.left = `${newLeft}px`;
       wrapper.style.top = `${newTop}px`;
+
+      getPanelPosition({ newLeft, newTop });
     };
 
     const onMouseUp = (): void => {

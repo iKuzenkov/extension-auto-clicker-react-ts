@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useRef } from 'react';
+import useSetPanelPosition from '../../storage/panel-position/useSetPanelPosition';
 import Toolbar from '../Toolbar/Toolbar';
 import SelectTargetButton from '../SelectTargetButton/SelectTargetButton';
 import Inputs from '../Inputs/Inputs';
@@ -23,6 +24,8 @@ function Main() {
   );
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const panelRef = useRef<HTMLDivElement>(null);
+
+  useSetPanelPosition({ panelRef });
 
   return (
     <>

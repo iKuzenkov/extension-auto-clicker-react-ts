@@ -6,4 +6,4 @@ type InfoItem = {
 export type DataInfo = {
   title: string;
   info: InfoItem[];
-};
+} | null;
