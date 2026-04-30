@@ -4,7 +4,7 @@ type Props = {
   panelRef: RefObject<HTMLDivElement | null>;
 };
 
-function usePanelPosition(props: Props) {
+function useSetPanelPosition(props: Props) {
   const { panelRef } = props;
 
   useLayoutEffect(() => {
@@ -24,4 +24,4 @@ function usePanelPosition(props: Props) {
   }, [panelRef]);
 }
 
-export default usePanelPosition;
+export default useSetPanelPosition;

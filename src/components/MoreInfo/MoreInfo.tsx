@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
+import useSetPanelPosition from '../../storage/panel-position/useSetPanelPosition';
 import infoData from './data/infoData';
 import Title from './components/Title/Title';
 import InfoUse from './components/InfoUse/InfoUse';
@@ -8,7 +9,6 @@ import type { DataInfo } from './data/TypesData';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import type { RootState } from '../../store/store';
 import './MoreInfo.scss';
-import usePanelPosition from '../../storage/usePanelPosition';
 
 function MoreInfo() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
@@ -18,7 +18,7 @@ function MoreInfo() {
 
   const panelRef = useRef<HTMLDivElement>(null);
 
-  usePanelPosition({ panelRef });
+  useSetPanelPosition({ panelRef });
 
   useEffect(() => {
     const timerLoading: number = setTimeout(() => {
