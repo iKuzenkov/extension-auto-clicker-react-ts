@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import infoData from './data/infoData';
 import Title from './components/Title/Title';
@@ -8,12 +8,17 @@ import type { DataInfo } from './data/TypesData';
 import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import type { RootState } from '../../store/store';
 import './MoreInfo.scss';
+import usePanelPosition from '../../storage/usePanelPosition';
 
 function MoreInfo() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const [data, setData] = useState<DataInfo | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
+
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  usePanelPosition({ panelRef });
 
   useEffect(() => {
     const timerLoading: number = setTimeout(() => {
@@ -31,7 +36,7 @@ function MoreInfo() {
 
   return (
     <>
-      <div id="acext-more-info-container-ss">
+      <div id="acext-more-info-container-ss" ref={panelRef}>
         {loading && <div>Loading...</div>}
         {error && <div>Failed to load data</div>}
         {data && (

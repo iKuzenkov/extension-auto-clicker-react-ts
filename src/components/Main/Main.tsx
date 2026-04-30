@@ -16,6 +16,7 @@ import type {
   Theme,
 } from '../../types/global-state-types/GlobalTypes';
 import './Main.scss';
+import usePanelPosition from '../../storage/usePanelPosition';
 
 function Main() {
   const isVisible: HideShow = useSelector(
@@ -23,6 +24,8 @@ function Main() {
   );
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const panelRef = useRef<HTMLDivElement>(null);
+
+  usePanelPosition({ panelRef });
 
   return (
     <>

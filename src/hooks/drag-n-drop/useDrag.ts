@@ -42,6 +42,14 @@ function useDrag(props: Props): void {
 
       wrapper.style.left = `${newLeft}px`;
       wrapper.style.top = `${newTop}px`;
+
+      localStorage.setItem(
+        'acext-panel-position-ss',
+        JSON.stringify({
+          left: newLeft,
+          top: newTop,
+        })
+      );
     };
 
     const onMouseUp = (): void => {
