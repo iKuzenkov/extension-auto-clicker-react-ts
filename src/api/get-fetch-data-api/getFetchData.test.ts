@@ -40,6 +40,8 @@ describe('Fetch Data API, bad response', () => {
       status: 500,
     });
 
-    expect(getFetchData('https://fake.url')).rejects.toThrow('HTTP error: 500');
+    await expect(getFetchData('https://fake.url')).rejects.toThrow(
+      'HTTP error: 500'
+    );
   });
 });
