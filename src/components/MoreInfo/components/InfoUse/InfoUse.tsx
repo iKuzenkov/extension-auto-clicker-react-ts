@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '../../../../store/store';
 import type { Theme } from '../../../../types/global-state-types/GlobalTypes';
 import type { Props, Element } from './Types';
-
 import './InfoUse.scss';
 
 function InfoUse(props: Props) {

@@ -6,7 +6,8 @@ import './popup.scss';
 
 const btn = document.getElementById('toggle') as HTMLButtonElement | null;
 
-let isOn: boolean = localStorage.getItem('autoClickerVisible') === 'true';
+let isOn: boolean =
+  localStorage.getItem('acext-autoClickerVisible-ss') === 'true';
 
 function updateButton(): void {
   if (!btn) return;
@@ -26,11 +27,11 @@ function requestPanelState(): void {
 
     chrome.tabs.sendMessage(
       tab.id,
-      { action: 'get-auto-clicker-state' } as MessageTypes,
+      { action: 'acext-get-auto-clicker-state-ss' } as MessageTypes,
       (response?: AutoClickerStateResponse) => {
         if (response && typeof response.autoClickerVisible === 'boolean') {
           isOn = response.autoClickerVisible;
-          localStorage.setItem('autoClickerVisible', String(isOn));
+          localStorage.setItem('acext-autoClickerVisible-ss', String(isOn));
         }
 
         updateButton();
@@ -41,13 +42,13 @@ function requestPanelState(): void {
 
 btn?.addEventListener('click', () => {
   isOn = !isOn;
-  localStorage.setItem('autoClickerVisible', String(isOn));
+  localStorage.setItem('acext-autoClickerVisible-ss', String(isOn));
 
   chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
     if (!tab?.id) return;
 
     const message: MessageTypes = {
-      action: 'toggle-auto-clicker',
+      action: 'acext-toggle-auto-clicker-ss',
       autoClickerVisible: isOn,
     };
 

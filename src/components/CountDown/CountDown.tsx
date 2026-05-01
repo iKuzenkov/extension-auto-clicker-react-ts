@@ -23,9 +23,9 @@ function CountDown() {
     <>
       <div id="acext-next-click-ss" className={`acext-${theme}-ss`}>
         <div
-          title="Сountdown to click"
           className={`acext-time-next-click-ss acext-${theme}-ss`}
           tabIndex={0}
+          title="Сountdown to click"
         >
           Next Click: {timeUntilClick}
         </div>

@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import type { MessageTypes } from './types/content-types/MessageTypes';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import App from './App';
+import type { MessageTypes } from './types/content-types/MessageTypes';
 import './styles/styles.scss';
 
 const isExtension =
@@ -12,10 +12,10 @@ const isExtension =
   !!chrome.runtime.id;
 
 const rootElement: HTMLDivElement =
-  (document.getElementById('auto-clicker-root') as HTMLDivElement) ||
+  (document.getElementById('acext-auto-clicker-root-ss') as HTMLDivElement) ||
   (() => {
     const el = document.createElement('div');
-    el.id = 'auto-clicker-root';
+    el.id = 'acext-auto-clicker-root-ss';
     document.body.appendChild(el);
     return el;
   })();
@@ -36,7 +36,7 @@ export function RootWrapper() {
       _sender: chrome.runtime.MessageSender,
       sendResponse: (response: { autoClickerVisible: boolean }) => void
     ): boolean | undefined {
-      if (msg.action === 'toggle-auto-clicker') {
+      if (msg.action === 'acext-toggle-auto-clicker-ss') {
         if (typeof msg.autoClickerVisible === 'boolean') {
           setVisible(msg.autoClickerVisible);
         } else {
@@ -44,7 +44,7 @@ export function RootWrapper() {
         }
       }
 
-      if (msg.action === 'get-auto-clicker-state') {
+      if (msg.action === 'acext-get-auto-clicker-state-ss') {
         sendResponse({ autoClickerVisible: visibleRef.current });
         return true;
       }

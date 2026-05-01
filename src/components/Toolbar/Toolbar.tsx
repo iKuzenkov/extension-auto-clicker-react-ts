@@ -1,15 +1,15 @@
 import { useCallback, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme, toggleHideShow } from '../../features/uiSlice';
 import useDrag from '../../hooks/drag-n-drop/useDrag';
 import useUIStorage from '../../storage/useUIStorage';
+import { toggleTheme, toggleHideShow } from '../../features/uiSlice';
 import Button from '../ReusableComponents/Button/Button';
+import type { AppDispatch, RootState } from '../../store/store';
 import type { Props } from './Types';
 import type {
   Theme,
   HideShow,
 } from '../../types/global-state-types/GlobalTypes';
-import type { AppDispatch, RootState } from '../../store/store';
 import './Toolbar.scss';
 
 function Toolbar(props: Props) {
@@ -42,27 +42,27 @@ function Toolbar(props: Props) {
       <div id="acext-toolbar-container-ss" className={`acext-${theme}-ss`}>
         <Button
           text="⇕⇕⇕"
-          title="move"
           aria-label="drag the panel to any place on the page"
-          cursor={isDrag ? 'grabbing' : 'grab'}
+          title="move"
           theme={theme}
+          cursor={isDrag ? 'grabbing' : 'grab'}
           ref={dragHandleRef}
         />
         <Button
           text={theme === 'light' ? '🌙' : '☀️'}
-          title={theme === 'light' ? 'on dark' : 'on light'}
-          aria-label={`switch the topic on ${theme === 'light' ? 'the dark' : 'the light'}`}
-          cursor="pointer"
-          theme={theme}
           onClick={onThemeClick}
+          aria-label={`switch the topic on ${theme === 'light' ? 'the dark' : 'the light'}`}
+          title={theme === 'light' ? 'on dark' : 'on light'}
+          theme={theme}
+          cursor="pointer"
         />
         <Button
           text="👁"
-          title={isVisible ? 'hide' : 'show'}
-          aria-label={`you can ${isVisible ? 'hide the panel' : 'show the panel'}`}
-          cursor="pointer"
-          theme={theme}
           onClick={onHideShowClick}
+          aria-label={`you can ${isVisible ? 'hide the panel' : 'show the panel'}`}
+          title={isVisible ? 'hide' : 'show'}
+          theme={theme}
+          cursor="pointer"
         />
       </div>
     </>

@@ -1,18 +1,24 @@
 $bg-primary: #eee;
-$border-primary: 1px solid black;
-$border-radius-primary: 6px;
-$padding-primary: 1px;
 $bg-dark-primary: #2a2929;
-$text-dark-primary: #ccc8c8;
-$border-dark-primary: #464545;
 $bg-dark-primary-inputs: #3d3c3c;
-$hover-light: #eee063;
-$active-light: #65e037;
 $bg-light-focus: #cfd3d3;
 $bg-light-focus-visible: #21e3d3ff;
-$outline-light-focus-visible: #0c8077;
 $bg-dark-focus: #565654;
 $bg-dark-focus-visible: #a40690;
-$outline-dark-focus-visible: #fc00d1;
+
+$border-primary: 1px solid black;
+$border-radius-primary: 6px;
+$border-dark-primary: #464545;
+
+$padding-primary: 1px;
+
+$text-dark-primary: #ccc8c8;
+
+$hover-light: #eee063;
 $hover-dark: #3a3838;
+
+$outline-light-focus-visible: #0c8077;
+$outline-dark-focus-visible: #fc00d1;
+
+$active-light: #65e037;
 $active-dark: #6e6d6d;

@@ -12,6 +12,7 @@ describe('handleElementClick()', () => {
       event,
       dispatch
     );
+
     expect(selectedElement).toBeInstanceOf(HTMLButtonElement);
     expect(dispatch).toHaveBeenCalled();
   });

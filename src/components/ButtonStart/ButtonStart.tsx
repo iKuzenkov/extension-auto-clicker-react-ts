@@ -1,16 +1,16 @@
+import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useTimerLogic from '../../hooks/timer-logic/useTimerLogic';
 import { timerState } from '../../features/logicSlice';
 import { statusMessage } from '../../features/uiSlice';
 import Button from '../ReusableComponents/Button/Button';
+import type { AppDispatch, RootState } from '../../store/store';
 import type {
   Theme,
   Delay,
   SelectedElement,
 } from '../../types/global-state-types/GlobalTypes';
-import type { AppDispatch, RootState } from '../../store/store';
 import './ButtonStart.scss';
-import { useCallback } from 'react';
 
 function ButtonStart() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
@@ -42,10 +42,10 @@ function ButtonStart() {
       <div id="acext-button-start-ss" className={`acext-${theme}-ss`}>
         <Button
           text="▶️ Start"
-          title="Start"
-          cursor="pointer"
-          theme={theme}
           onClick={onStartClick}
+          title="Start"
+          theme={theme}
+          cursor="pointer"
         />
       </div>
     </>

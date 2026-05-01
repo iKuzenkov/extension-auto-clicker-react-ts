@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { toggleTheme, toggleHideShow } from '../features/uiSlice';
 import type { AppDispatch } from '../store/store';
 import type { Theme, HideShow } from '../types/global-state-types/GlobalTypes';
-import { toggleTheme, toggleHideShow } from '../features/uiSlice';
 
 type Props = {
   theme: Theme;

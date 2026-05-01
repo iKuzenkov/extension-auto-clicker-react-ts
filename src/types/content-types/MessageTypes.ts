@@ -1,6 +1,6 @@
 export type MessageTypes =
-  | { action: 'toggle-auto-clicker'; autoClickerVisible?: boolean }
-  | { action: 'get-auto-clicker-state' };
+  | { action: 'acext-toggle-auto-clicker-ss'; autoClickerVisible?: boolean }
+  | { action: 'acext-get-auto-clicker-state-ss' };
 
 export type AutoClickerStateResponse = {
   autoClickerVisible: boolean;
