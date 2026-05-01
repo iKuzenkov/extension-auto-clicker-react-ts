@@ -16,9 +16,9 @@ function HelperStatus() {
     <>
       <div id="acext-helper-status-ss" className={`acext-${theme}-ss`}>
         <div
-          title="Work status"
           className={`acext-status-message-ss acext-${theme}-ss`}
           tabIndex={0}
+          title="Work status"
         >
           Status: {message}
         </div>

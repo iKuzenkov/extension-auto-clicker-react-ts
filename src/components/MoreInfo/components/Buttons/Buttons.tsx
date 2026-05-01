@@ -14,8 +14,8 @@ function Buttons() {
             <button
               type="button"
               className={`acext-info-btn-ss acext-${theme}-ss`}
-              title="Back"
               aria-label="back"
+              title="Back"
             >
               ⬅
             </button>
@@ -31,9 +31,9 @@ function Buttons() {
           >
             <button
               type="button"
-              title="Website"
-              aria-label="open website"
               className={`acext-info-btn-ss acext-${theme}-ss`}
+              aria-label="open website"
+              title="Website"
             >
               🌐
             </button>
@@ -49,9 +49,9 @@ function Buttons() {
           >
             <button
               type="button"
-              title="Contact"
-              aria-label="open сontact"
               className={`acext-info-btn-ss acext-${theme}-ss`}
+              aria-label="open сontact"
+              title="Contact"
             >
               ✉️
             </button>
@@ -67,9 +67,9 @@ function Buttons() {
           >
             <button
               type="button"
-              title="Coffee"
-              aria-label="donate"
               className={`acext-info-btn-ss acext-${theme}-ss`}
+              aria-label="donate"
+              title="Coffee"
             >
               ☕
             </button>

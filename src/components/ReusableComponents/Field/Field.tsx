@@ -1,23 +1,13 @@
-import { type ChangeEvent } from 'react';
-import type {
-  Time,
-  KeysFromTime,
-} from '../../../types/global-state-types/GlobalTypes';
 import { useDispatch, useSelector } from 'react-redux';
 import { inputsState } from '../../../features/logicSlice';
 import type { AppDispatch, RootState } from '../../../store/store';
+import { type ChangeEvent } from 'react';
+import type { Time } from '../../../types/global-state-types/GlobalTypes';
+import type { Props } from './Types';
 import './Field.scss';
 
-type Props = {
-  name: KeysFromTime;
-  title: string;
-  value: string;
-  placeholder: string;
-  'aria-label': string;
-};
-
 function Field(props: Props) {
-  const { name, title, 'aria-label': ariaLabel, value, placeholder } = props;
+  const { name, value, 'aria-label': ariaLabel, title, placeholder } = props;
   const time: Time = useSelector(
     (state: RootState): Time => state.logic.entryInput
   );
@@ -26,17 +16,17 @@ function Field(props: Props) {
     <>
       <input
         type="text"
-        title={title}
-        name={name}
-        aria-label={ariaLabel}
         className="acext-input-ss"
-        value={value}
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           const value: string = e.target.value;
           if (!/^\d*$/.test(value)) return;
 
           dispatch(inputsState({ ...time, [name]: value }));
         }}
+        name={name}
+        value={value}
+        aria-label={ariaLabel}
+        title={title}
         placeholder={placeholder}
       />
     </>

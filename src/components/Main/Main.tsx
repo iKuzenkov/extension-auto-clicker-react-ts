@@ -32,9 +32,9 @@ function Main() {
       <div
         id="acext-panel-container-ss"
         className={`acext-${theme}-ss`}
-        ref={panelRef}
         tabIndex={0}
         aria-label="Autoclicker extension"
+        ref={panelRef}
       >
         <div id="acext-grid-layout-ss" className={`acext-${theme}-ss`}>
           <Toolbar panelRef={panelRef} />

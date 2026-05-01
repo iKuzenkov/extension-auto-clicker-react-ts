@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Field from '../ReusableComponents/Field/Field';
 import useInputValidation from '../../hooks/input-validation/useInputValidation';
 import { delayForTimer } from '../../features/logicSlice';
+import Field from '../ReusableComponents/Field/Field';
 import type { AppDispatch, RootState } from '../../store/store';
 import type {
   Theme,
@@ -30,23 +30,23 @@ function Inputs() {
         <div className="acext-timer-inputs-ss">
           <Field
             name="hour"
-            title="hours"
-            aria-label="enter from one hour to ten thousand hours"
             value={time.hour}
+            aria-label="enter from one hour to ten thousand hours"
+            title="hours"
             placeholder="h"
           />
           <Field
             name="minute"
-            title="minutes"
-            aria-label="enter between one and fifty-nine minutes"
             value={time.minute}
+            aria-label="enter between one and fifty-nine minutes"
+            title="minutes"
             placeholder="m"
           />
           <Field
             name="second"
-            title="seconds"
-            aria-label="enter between one and fifty-nine seconds"
             value={time.second}
+            aria-label="enter between one and fifty-nine seconds"
+            title="seconds"
             placeholder="s"
           />
         </div>

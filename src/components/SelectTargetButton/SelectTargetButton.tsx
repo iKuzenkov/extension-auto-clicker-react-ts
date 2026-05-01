@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import useSaveElement from '../../hooks/save-element/useSaveElement';
 import Button from '../ReusableComponents/Button/Button';
-import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import type { RootState } from '../../store/store';
+import type { Theme } from '../../types/global-state-types/GlobalTypes';
 import './SelectTargetButton.scss';
 
 function SelectTargetButton() {
@@ -18,10 +18,10 @@ function SelectTargetButton() {
       >
         <Button
           text="🎯 Select Target"
-          title="Select a target"
-          cursor="pointer"
-          theme={theme}
           onClick={startSelecting}
+          title="Select a target"
+          theme={theme}
+          cursor="pointer"
         />
       </div>
     </>
