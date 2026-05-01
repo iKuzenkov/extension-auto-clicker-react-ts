@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { statusMessage } from '../../features/uiSlice';
 import handleElementClick from './logic/handleElementClick';
+import { statusMessage } from '../../features/uiSlice';
 import type { AppDispatch } from '../../store/store';
 import type { SelectedElement } from '../../types/global-state-types/GlobalTypes';
 
