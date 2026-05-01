@@ -36,6 +36,7 @@
       'info';
     grid-template-rows: 33px 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
     grid-template-columns: 200px;
+    border-radius: 3px;
 
     &.acext-light-ss {
       background: $bg-primary;
