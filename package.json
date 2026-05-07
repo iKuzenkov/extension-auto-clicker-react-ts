@@ -1,7 +1,7 @@
 {
   "name": "extension-auto-clicker-react-ts",
   "private": true,
-  "version": "0.0.0",
+  "version": "4.1.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
