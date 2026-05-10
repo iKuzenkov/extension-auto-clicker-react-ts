@@ -430,6 +430,31 @@ This project demonstrates:
 
 ---
 
+## Local Development
+
+```bash
+# Clone repository
+git clone git@github.com:iKuzenkov/extension-auto-clicker-react-ts.git
+
+# Open project folder
+cd extension-auto-clicker-react-ts
+
+# Install dependencies
+npm install
+
+# Start development mode
+npm run dev
+```
+
+### Important
+
+If the Chrome extension version is already enabled in the browser,
+disable the installed extension before running dev mode.
+
+Both versions use the same application entry and can conflict with each other during development.
+
+---
+
 # Scripts
 
 ```bash
