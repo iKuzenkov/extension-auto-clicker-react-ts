@@ -348,6 +348,10 @@ The project includes accessibility improvements:
 - accessible buttons
 - theme-aware focus visibility
 
+## Accessibility Demo
+
+![Accessibility Demo](./readme-assets/keyboard-navigation-focus-visible.gif)
+
 ---
 
 # Redux Toolkit Structure
@@ -434,7 +438,7 @@ This project demonstrates:
 
 ```bash
 # Clone repository
-git clone git@github.com:iKuzenkov/extension-auto-clicker-react-ts.git
+git clone https://github.com/iKuzenkov/extension-auto-clicker-react-ts.git
 
 # Open project folder
 cd extension-auto-clicker-react-ts
