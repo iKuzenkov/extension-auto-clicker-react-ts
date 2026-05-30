@@ -1,5 +1,7 @@
-import { useSelector } from 'react-redux';
-import type { RootState } from '../../store/store';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { statusMessage } from '../../features/uiSlice';
+import type { AppDispatch, RootState } from '../../store/store';
 import type {
   Theme,
   Message,
@@ -11,6 +13,15 @@ function HelperStatus() {
   const message: Message = useSelector(
     (state: RootState): Message => state.ui.message
   );
+
+  const isRunning: boolean = useSelector(
+    (state: RootState): boolean => state.logic.isRunningTimerState
+  );
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(statusMessage(isRunning ? 'working...' : message));
+  }, [dispatch, isRunning, message]);
 
   return (
     <>
