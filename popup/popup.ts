@@ -1,7 +1,7 @@
 import type {
   MessageTypes,
   AutoClickerStateResponse,
-} from '../src/types/content-types/MessageTypes';
+} from '../src/shared/types/content-types/MessageTypes';
 import './popup.scss';
 
 const btn = document.getElementById('toggle') as HTMLButtonElement | null;

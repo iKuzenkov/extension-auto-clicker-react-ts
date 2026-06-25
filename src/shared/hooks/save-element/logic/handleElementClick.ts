@@ -1,0 +1,26 @@
+import { savedElement } from '../../../../features/logicSlice';
+import { statusMessage } from '../../../../features/uiSlice';
+import type { AppDispatch } from '../../../../store/store';
+import type { SelectedElement } from '../../../types/global-state-types/GlobalTypes';
+
+function handleElementClick(
+  e: MouseEvent,
+  dispatch: AppDispatch
+): SelectedElement {
+  e.preventDefault();
+  e.stopPropagation();
+
+  if (
+    !(e.target instanceof HTMLElement) ||
+    e.target.closest('[id="acext-panel-container-ss"]')
+  )
+    return null;
+
+  const target: HTMLElement = e.target;
+  dispatch(savedElement(target));
+  dispatch(statusMessage('target is selected'));
+
+  return e.target;
+}
+
+export default handleElementClick;

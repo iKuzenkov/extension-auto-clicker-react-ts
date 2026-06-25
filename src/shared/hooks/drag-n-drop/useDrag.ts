@@ -1,0 +1,67 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import getPanelPosition from '../../../storage/panel-position/getPanelPosition';
+import { dragState } from '../../../features/logicSlice';
+import type { AppDispatch } from '../../../store/store';
+import type { Props } from './Types';
+
+function useDrag(props: Props): void {
+  const { panelRef, dragHandleRef } = props;
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    const wrapper = panelRef.current;
+    const handle = dragHandleRef.current;
+
+    if (!wrapper || !handle) return;
+
+    let isDragging: boolean = false;
+    let offsetX: number = 0;
+    let offsetY: number = 0;
+
+    const onMouseDown = (e: MouseEvent): void => {
+      isDragging = true;
+      dispatch(dragState(isDragging));
+
+      offsetX = e.clientX - wrapper.offsetLeft;
+      offsetY = e.clientY - wrapper.offsetTop;
+
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    };
+
+    const onMouseMove = (e: MouseEvent): void => {
+      if (!isDragging) return;
+
+      const rect: DOMRect = wrapper.getBoundingClientRect();
+
+      let newLeft: number = e.clientX - offsetX;
+      let newTop: number = e.clientY - offsetY;
+
+      newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - rect.width));
+      newTop = Math.max(0, Math.min(newTop, window.innerHeight - rect.height));
+
+      wrapper.style.left = `${newLeft}px`;
+      wrapper.style.top = `${newTop}px`;
+
+      getPanelPosition({ newLeft, newTop });
+    };
+
+    const onMouseUp = (): void => {
+      isDragging = false;
+      dispatch(dragState(isDragging));
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+
+    handle.addEventListener('mousedown', onMouseDown);
+
+    return (): void => {
+      handle.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+  }, [dispatch, panelRef, dragHandleRef]);
+}
+
+export default useDrag;

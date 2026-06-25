@@ -3,7 +3,7 @@ import type {
   SelectedElement,
   Delay,
   Time,
-} from '../types/global-state-types/GlobalTypes';
+} from '../shared/types/global-state-types/GlobalTypes';
 
 type State = {
   entryInput: Time;

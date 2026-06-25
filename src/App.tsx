@@ -1,6 +1,6 @@
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import Main from './components/Main/Main';
-import MoreInfo from './components/MoreInfo/MoreInfo';
+import Main from './modules/auto-clicker/Main/Main';
+import MoreInfo from './modules/how-to-use/MoreInfo/MoreInfo';
 
 function App() {
   return (

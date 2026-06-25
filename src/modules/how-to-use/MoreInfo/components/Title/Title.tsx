@@ -1,0 +1,20 @@
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../../../../store/store';
+import type { Props } from './Types';
+import type { Theme } from '../../../../../shared/types/global-state-types/GlobalTypes';
+import './Title.scss';
+
+function Title(props: Props) {
+  const { title } = props;
+
+  const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
+  return (
+    <>
+      <div id="acext-title-ss" className={`acext-${theme}-ss`} tabIndex={0}>
+        <span>{title}</span>
+      </div>
+    </>
+  );
+}
+
+export default Title;
