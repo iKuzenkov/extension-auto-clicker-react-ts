@@ -1,4 +1,4 @@
-import type { Theme } from '../../../types/global-state-types/GlobalTypes';
+import type { Theme } from '../../types/global-state-types/GlobalTypes';
 
 export type Props = {
   text: string;

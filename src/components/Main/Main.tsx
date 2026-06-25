@@ -15,7 +15,7 @@ import type { RootState } from '../../store/store';
 import type {
   HideShow,
   Theme,
-} from '../../types/global-state-types/GlobalTypes';
+} from '../../shared/types/global-state-types/GlobalTypes';
 import './Main.scss';
 
 function Main() {

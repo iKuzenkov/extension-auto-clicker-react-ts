@@ -4,8 +4,8 @@ import timeNormalization from './logic/time-normalization';
 import {
   decreaseCountDown,
   timeUntilNextClickResult,
-} from '../../features/logicSlice';
-import type { AppDispatch } from '../../store/store';
+} from '../../../features/logicSlice';
+import type { AppDispatch } from '../../../store/store';
 import { type RefObject } from 'react';
 
 type Props = {

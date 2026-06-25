@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import App from './App';
-import type { MessageTypes } from './types/content-types/MessageTypes';
+import type { MessageTypes } from './shared/types/content-types/MessageTypes';
 import './styles/styles.scss';
 
 const isExtension =

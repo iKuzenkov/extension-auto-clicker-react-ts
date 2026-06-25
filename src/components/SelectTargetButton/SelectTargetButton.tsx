@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import useSaveElement from '../../hooks/save-element/useSaveElement';
-import Button from '../ReusableComponents/Button/Button';
+import useSaveElement from '../../shared/hooks/save-element/useSaveElement';
+import Button from '../../shared/ui/Button/Button';
 import type { RootState } from '../../store/store';
-import type { Theme } from '../../types/global-state-types/GlobalTypes';
+import type { Theme } from '../../shared/types/global-state-types/GlobalTypes';
 import './SelectTargetButton.scss';
 
 function SelectTargetButton() {

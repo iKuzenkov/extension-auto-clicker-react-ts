@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import handleElementClick from './logic/handleElementClick';
-import { statusMessage } from '../../features/uiSlice';
-import type { AppDispatch } from '../../store/store';
+import { statusMessage } from '../../../features/uiSlice';
+import type { AppDispatch } from '../../../store/store';
 import type { SelectedElement } from '../../types/global-state-types/GlobalTypes';
 
 function useSaveElement() {

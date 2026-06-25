@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useInputValidation from '../../hooks/input-validation/useInputValidation';
+import useInputValidation from '../../shared/hooks/input-validation/useInputValidation';
 import { delayForTimer } from '../../features/logicSlice';
-import Field from '../ReusableComponents/Field/Field';
+import Input from '../../shared/ui/Input/Input';
 import type { AppDispatch, RootState } from '../../store/store';
 import type {
   Theme,
   Time,
   Delay,
-} from '../../types/global-state-types/GlobalTypes';
+} from '../../shared/types/global-state-types/GlobalTypes';
 import './Inputs.scss';
 
 function Inputs() {
@@ -28,21 +28,21 @@ function Inputs() {
     <>
       <div id="acext-inputs-container-ss" className={`acext-${theme}-ss`}>
         <div className="acext-timer-inputs-ss">
-          <Field
+          <Input
             name="hour"
             value={time.hour}
             aria-label="enter from one hour to ten thousand hours"
             title="hours"
             placeholder="h"
           />
-          <Field
+          <Input
             name="minute"
             value={time.minute}
             aria-label="enter between one and fifty-nine minutes"
             title="minutes"
             placeholder="m"
           />
-          <Field
+          <Input
             name="second"
             value={time.second}
             aria-label="enter between one and fifty-nine seconds"

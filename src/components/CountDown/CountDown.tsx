@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useRef } from 'react';
-import useTimeUntilNextClick from '../../hooks/count-down/useTimeUntilNextClick';
+import useTimeUntilNextClick from '../../shared/hooks/count-down/useTimeUntilNextClick';
 import type { RootState } from '../../store/store';
-import type { Theme } from '../../types/global-state-types/GlobalTypes';
+import type { Theme } from '../../shared/types/global-state-types/GlobalTypes';
 import './CountDown.scss';
 
 function CountDown() {

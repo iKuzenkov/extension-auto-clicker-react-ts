@@ -5,7 +5,7 @@ import type { AppDispatch, RootState } from '../../store/store';
 import type {
   Theme,
   Message,
-} from '../../types/global-state-types/GlobalTypes';
+} from '../../shared/types/global-state-types/GlobalTypes';
 import './HelperStatus.scss';
 
 function HelperStatus() {

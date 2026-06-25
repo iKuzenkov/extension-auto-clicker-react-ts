@@ -3,7 +3,7 @@ import type {
   Theme,
   HideShow,
   Message,
-} from '../types/global-state-types/GlobalTypes';
+} from '../shared/types/global-state-types/GlobalTypes';
 
 type State = {
   theme: Theme;

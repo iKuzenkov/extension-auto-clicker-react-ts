@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { inputsState } from '../../../features/logicSlice';
 import type { AppDispatch, RootState } from '../../../store/store';
 import { type ChangeEvent } from 'react';
-import type { Time } from '../../../types/global-state-types/GlobalTypes';
+import type { Time } from '../../types/global-state-types/GlobalTypes';
 import type { Props } from './Types';
-import './Field.scss';
+import './Input.scss';
 
-function Field(props: Props) {
+function Input(props: Props) {
   const { name, value, 'aria-label': ariaLabel, title, placeholder } = props;
   const time: Time = useSelector(
     (state: RootState): Time => state.logic.entryInput
@@ -33,4 +33,4 @@ function Field(props: Props) {
   );
 }
 
-export default Field;
+export default Input;

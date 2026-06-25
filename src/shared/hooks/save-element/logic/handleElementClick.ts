@@ -1,6 +1,6 @@
-import { savedElement } from '../../../features/logicSlice';
-import { statusMessage } from '../../../features/uiSlice';
-import type { AppDispatch } from '../../../store/store';
+import { savedElement } from '../../../../features/logicSlice';
+import { statusMessage } from '../../../../features/uiSlice';
+import type { AppDispatch } from '../../../../store/store';
 import type { SelectedElement } from '../../../types/global-state-types/GlobalTypes';
 
 function handleElementClick(

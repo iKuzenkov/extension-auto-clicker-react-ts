@@ -6,7 +6,7 @@ import Title from './components/Title/Title';
 import InfoUse from './components/InfoUse/InfoUse';
 import Buttons from './components/Buttons/Buttons';
 import type { DataInfo } from './data/TypesData';
-import type { Theme } from '../../types/global-state-types/GlobalTypes';
+import type { Theme } from '../../shared/types/global-state-types/GlobalTypes';
 import type { RootState } from '../../store/store';
 import './MoreInfo.scss';
 

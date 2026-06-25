@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { quantityState, setCountDown } from '../../features/logicSlice';
+import { quantityState, setCountDown } from '../../../features/logicSlice';
 import type {
   SelectedElement,
   Delay,
 } from '../../types/global-state-types/GlobalTypes';
-import type { AppDispatch, RootState } from '../../store/store';
+import type { AppDispatch, RootState } from '../../../store/store';
 
 function useTimerLogic() {
   const isRunning: boolean = useSelector(

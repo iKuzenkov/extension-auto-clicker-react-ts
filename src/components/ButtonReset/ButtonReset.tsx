@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { statusMessage } from '../../features/uiSlice';
 import { resetLogicState } from '../../features/logicSlice';
-import Button from '../ReusableComponents/Button/Button';
+import Button from '../../shared/ui/Button/Button';
 import type { AppDispatch, RootState } from '../../store/store';
-import type { Theme } from '../../types/global-state-types/GlobalTypes';
+import type { Theme } from '../../shared/types/global-state-types/GlobalTypes';
 import './ButtonReset.scss';
 
 function ButtonReset() {

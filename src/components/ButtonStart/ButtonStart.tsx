@@ -1,15 +1,15 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useTimerLogic from '../../hooks/timer-logic/useTimerLogic';
+import useTimerLogic from '../../shared/hooks/timer-logic/useTimerLogic';
 import { timerState } from '../../features/logicSlice';
 import { statusMessage } from '../../features/uiSlice';
-import Button from '../ReusableComponents/Button/Button';
+import Button from '../../shared/ui/Button/Button';
 import type { AppDispatch, RootState } from '../../store/store';
 import type {
   Theme,
   Delay,
   SelectedElement,
-} from '../../types/global-state-types/GlobalTypes';
+} from '../../shared/types/global-state-types/GlobalTypes';
 import './ButtonStart.scss';
 
 function ButtonStart() {
