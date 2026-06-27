@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useRef } from 'react';
 import useSetPanelPosition from '../../../storage/panel-position/useSetPanelPosition';
 import Toolbar from '../../../shared/ui/components/Toolbar/Toolbar';
-import SelectTargetButton from '../SelectTargetButton/SelectTargetButton';
+import SelectTargetButton from '../../../shared/ui/components/SelectTargetButton/SelectTargetButton';
 import Inputs from '../Inputs/Inputs';
 import ButtonStart from '../ButtonStart/ButtonStart';
 import ButtonStop from '../ButtonStop/ButtonStop';
