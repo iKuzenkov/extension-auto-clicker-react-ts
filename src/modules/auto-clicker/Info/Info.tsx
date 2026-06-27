@@ -23,6 +23,19 @@ function Info() {
               how to use
             </button>
           </Link>
+          <Link
+            to="cookie-clicker"
+            className="acext-link-to-source-ss"
+            tabIndex={-1}
+          >
+            <button
+              type="button"
+              className={`acext-more-info-btn-ss acext-${theme}-ss`}
+              title="Cookie-Clicker"
+            >
+              cookie clicker
+            </button>
+          </Link>
         </div>
       </div>
     </>
