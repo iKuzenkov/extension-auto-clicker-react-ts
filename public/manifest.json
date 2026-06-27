@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Safe Auto Clicker — Smart Mouse Click Automation for Any Website",
-  "version": "4.1.9",
+  "version": "4.2.10",
   "description": "Auto-click anything on any website. Smart, safe, user-controlled clicker for forms, games, Salesforce, eBay, Amazon.",
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
