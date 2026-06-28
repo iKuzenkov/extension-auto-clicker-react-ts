@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { inputsState } from '../../../features/logicSlice';
+import { quantityOfClicks } from '../../../features/cookieSlice';
 import type { AppDispatch, RootState } from '../../../store/store';
 import { type ChangeEvent } from 'react';
 import type { Time } from '../../types/global-state-types/GlobalTypes';
@@ -22,6 +23,7 @@ function Input(props: Props) {
           if (!/^\d*$/.test(value)) return;
 
           dispatch(inputsState({ ...time, [name]: value }));
+          dispatch(quantityOfClicks(value));
         }}
         name={name}
         value={value}
