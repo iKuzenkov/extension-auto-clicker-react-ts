@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import useSetPanelPosition from '../../storage/panel-position/useSetPanelPosition';
 import Toolbar from '../../shared/ui/components/Toolbar/Toolbar';
 import SelectTargetButton from '../../shared/ui/components/SelectTargetButton/SelectTargetButton';
+import Field from './components/Field/Field';
 import type {
   HideShow,
   Theme,
@@ -34,6 +35,7 @@ const CookieClicker = () => {
         >
           <Toolbar panelRef={panelRef} />
           {isVisible && <SelectTargetButton />}
+          {isVisible && <Field />}
         </div>
       </div>
     </>
