@@ -1,14 +1,19 @@
 import { useSelector } from 'react-redux';
-import Input from '../../../../shared/ui/Input/Input';
+import Input from '../../../../shared/ui/Fields/Fields';
 import type { Theme } from '../../../../shared/types/global-state-types/GlobalTypes';
 import type { RootState } from '../../../../store/store';
 import './Field.scss';
+import {useEffect} from "react";
 
 function Inputs() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const quantity: string = useSelector(
     (state: RootState): string => state.cookie.quantity
   );
+
+  useEffect(() => {
+    console.log(quantity);
+  }, [quantity]);
 
   return (
     <>

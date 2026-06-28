@@ -5,7 +5,7 @@ import type { AppDispatch, RootState } from '../../../store/store';
 import { type ChangeEvent } from 'react';
 import type { Time } from '../../types/global-state-types/GlobalTypes';
 import type { Props } from './Types';
-import './Input.scss';
+import './Fields.scss';
 
 function Input(props: Props) {
   const { name, value, 'aria-label': ariaLabel, title, placeholder } = props;
