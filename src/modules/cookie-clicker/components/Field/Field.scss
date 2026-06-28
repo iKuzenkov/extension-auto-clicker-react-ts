@@ -1,0 +1,55 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as *;
+
+#acext-field-cookie-clicker-container-ss {
+  all: initial;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+
+  &.acext-light-ss {
+    color: #000;
+    background: $bg-primary;
+
+    input {
+      &:focus {
+        outline: 4px solid $outline-light-focus-visible;
+      }
+    }
+  }
+
+  &.acext-dark-ss {
+    color: $text-dark-primary;
+    background: $bg-dark-primary;
+
+    input {
+      border: 1px solid $border-dark-primary;
+      background: $bg-dark-primary-inputs;
+
+      &:focus {
+        background: $bg-dark-focus;
+        outline: 4px solid $bg-dark-focus-visible;
+      }
+
+      &::placeholder {
+        color: #dedbda;
+      }
+    }
+  }
+
+  .acext-cookie-clicker-input-ss {
+    display: flex;
+    width: 100%;
+
+    input {
+      color: inherit;
+      width: 100%;
+
+      &::placeholder {
+        text-align: center;
+      }
+    }
+  }
+}
