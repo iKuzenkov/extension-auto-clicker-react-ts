@@ -9,8 +9,8 @@ function App() {
       <MemoryRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="cookie-clicker" element={<CookieClicker />}></Route>
-          <Route path="more-info" element={<MoreInfo />}></Route>
+          <Route path="/cookie-clicker" element={<CookieClicker />}></Route>
+          <Route path="/more-info" element={<MoreInfo />}></Route>
         </Routes>
       </MemoryRouter>
     </>

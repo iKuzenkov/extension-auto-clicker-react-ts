@@ -11,7 +11,7 @@ function Info() {
       <div id="acext-info-ss" className={`acext-${theme}-ss`}>
         <div className="acext-more-info-container-ss">
           <Link
-            to="cookie-clicker"
+            to="/cookie-clicker"
             className="acext-link-to-source-ss"
             tabIndex={-1}
           >
@@ -33,7 +33,7 @@ function Info() {
             </button>
           </Link>
           <Link
-            to="more-info"
+            to="/more-info"
             className="acext-link-to-source-ss"
             tabIndex={-1}
           >
