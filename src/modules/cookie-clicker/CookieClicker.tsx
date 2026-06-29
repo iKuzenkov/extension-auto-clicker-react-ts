@@ -4,6 +4,13 @@ import useSetPanelPosition from '../../storage/panel-position/useSetPanelPositio
 import Toolbar from '../../shared/ui/components/Toolbar/Toolbar';
 import SelectTargetButton from '../../shared/ui/components/SelectTargetButton/SelectTargetButton';
 import Field from './components/Field/Field';
+import ButtonStart from '../../shared/ui/components/ButtonStart/ButtonStart';
+import ButtonStop from '../../shared/ui/components/ButtonStop/ButtonStop';
+import ButtonReset from '../../shared/ui/components/ButtonReset/ButtonReset';
+import ClickCount from '../../shared/ui/components/ClickCount/ClickCount';
+import CountDown from '../../shared/ui/components/CountDown/CountDown';
+import HelperStatus from '../../shared/ui/components/HelperStatus/HelperStatus';
+import Info from '../../shared/ui/components/Info/Info';
 import type {
   HideShow,
   Theme,
@@ -36,6 +43,13 @@ const CookieClicker = () => {
           <Toolbar panelRef={panelRef} />
           {isVisible && <SelectTargetButton />}
           {isVisible && <Field />}
+          {isVisible && <ButtonStart />}
+          {isVisible && <ButtonStop />}
+          {isVisible && <ButtonReset />}
+          {isVisible && <ClickCount />}
+          {isVisible && <CountDown />}
+          {isVisible && <HelperStatus />}
+          {isVisible && <Info />}
         </div>
       </div>
     </>

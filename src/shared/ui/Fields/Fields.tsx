@@ -21,9 +21,11 @@ function Input(props: Props) {
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           const value: string = e.target.value;
           if (!/^\d*$/.test(value)) return;
-
-          dispatch(inputsState({ ...time, [name]: value }));
-          dispatch(quantityOfClicks(value));
+          dispatch(
+            name !== 'quantity'
+              ? inputsState({ ...time, [name]: value })
+              : quantityOfClicks(value)
+          );
         }}
         name={name}
         value={value}

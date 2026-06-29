@@ -1,11 +1,12 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Input from '../../../../shared/ui/Fields/Fields';
+import Inputs from '../../../../shared/ui/components/Inputs/Inputs';
 import type { Theme } from '../../../../shared/types/global-state-types/GlobalTypes';
 import type { RootState } from '../../../../store/store';
 import './Field.scss';
-import {useEffect} from "react";
 
-function Inputs() {
+function Field() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const quantity: string = useSelector(
     (state: RootState): string => state.cookie.quantity
@@ -27,12 +28,13 @@ function Inputs() {
             value={quantity}
             aria-label="enter the number of clicks"
             title="number of clicks"
-            placeholder="quantity"
+            placeholder="number of clicks"
           />
         </div>
       </div>
+      <Inputs />
     </>
   );
 }
 
-export default Inputs;
+export default Field;

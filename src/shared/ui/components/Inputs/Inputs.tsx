@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useInputValidation from '../../../shared/hooks/input-validation/useInputValidation';
-import { delayForTimer } from '../../../features/logicSlice';
-import Input from '../../../shared/ui/Fields/Fields';
-import type { AppDispatch, RootState } from '../../../store/store';
+import useInputValidation from '../../../hooks/input-validation/useInputValidation';
+import { delayForTimer } from '../../../../features/logicSlice';
+import Input from '../../../ui/Fields/Fields';
+import type { AppDispatch, RootState } from '../../../../store/store';
 import type {
   Theme,
   Time,
   Delay,
-} from '../../../shared/types/global-state-types/GlobalTypes';
+} from '../../../types/global-state-types/GlobalTypes';
 import './Inputs.scss';
 
 function Inputs() {
