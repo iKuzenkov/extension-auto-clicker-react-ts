@@ -7,15 +7,12 @@ import type {
 } from '../../types/global-state-types/GlobalTypes';
 import type { AppDispatch, RootState } from '../../../store/store';
 
-function useTimerLogic() {
+function useTimerLogic(delay: Delay) {
   const isRunning: boolean = useSelector(
     (state: RootState): boolean => state.logic.isRunningTimerState
   );
   const selectedElement: SelectedElement = useSelector(
     (state: RootState): SelectedElement => state.logic.selectedElement
-  );
-  const delay: Delay = useSelector(
-    (state: RootState): Delay => state.logic.delayInMilliseconds
   );
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
