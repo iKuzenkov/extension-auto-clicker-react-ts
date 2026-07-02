@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useTimerLogic from '../../../hooks/timer-logic/useTimerLogic';
 import { timerState } from '../../../../features/logicSlice';
 import { statusMessage } from '../../../../features/uiSlice';
 import Button from '../../../ui/Button/Button';
@@ -34,8 +33,6 @@ function ButtonStart() {
     dispatch(timerState(true));
     dispatch(statusMessage('working...'));
   }, [dispatch, selectedElement, delay]);
-
-  useTimerLogic();
 
   return (
     <>

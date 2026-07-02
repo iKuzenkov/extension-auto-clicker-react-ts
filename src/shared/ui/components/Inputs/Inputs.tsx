@@ -10,6 +10,7 @@ import type {
   Delay,
 } from '../../../types/global-state-types/GlobalTypes';
 import './Inputs.scss';
+import useTimerLogic from '../../../hooks/timer-logic/useTimerLogic';
 
 function Inputs() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
@@ -19,6 +20,8 @@ function Inputs() {
   const dispatch = useDispatch<AppDispatch>();
 
   const delayInMilliseconds: Delay = useInputValidation(time);
+
+  useTimerLogic(delayInMilliseconds);
 
   useEffect(() => {
     dispatch(delayForTimer(delayInMilliseconds));

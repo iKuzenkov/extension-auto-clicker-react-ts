@@ -13,7 +13,6 @@ function HelperStatus() {
   const message: Message = useSelector(
     (state: RootState): Message => state.ui.message
   );
-
   const isRunning: boolean = useSelector(
     (state: RootState): boolean => state.logic.isRunningTimerState
   );
