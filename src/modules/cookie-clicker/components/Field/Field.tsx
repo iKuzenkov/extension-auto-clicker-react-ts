@@ -1,20 +1,31 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import useCookieLogic from '../../../../shared/hooks/cookie-logic/useCookieLogic';
+import { setDelayOfClicks } from '../../../../features/cookieSlice';
 import Input from '../../../../shared/ui/Fields/Fields';
 import Inputs from '../../../../shared/ui/components/Inputs/Inputs';
-import type { Theme } from '../../../../shared/types/global-state-types/GlobalTypes';
-import type { RootState } from '../../../../store/store';
+import type {
+  Delay,
+  Theme,
+} from '../../../../shared/types/global-state-types/GlobalTypes';
+import type { AppDispatch, RootState } from '../../../../store/store';
 import './Field.scss';
+import useTimerLogic from '../../../../shared/hooks/timer-logic/useTimerLogic';
 
 function Field() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
   const quantity: string = useSelector(
     (state: RootState): string => state.cookie.quantity
   );
+  const dispatch = useDispatch<AppDispatch>();
+
+  const delayForMultiClicks: Delay = useCookieLogic(quantity);
+
+  useTimerLogic(delayForMultiClicks);
 
   useEffect(() => {
-    console.log(quantity);
-  }, [quantity]);
+    dispatch(setDelayOfClicks(delayForMultiClicks));
+  }, [dispatch, delayForMultiClicks]);
 
   return (
     <>
