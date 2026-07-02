@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { statusMessage } from '../../../../features/uiSlice';
 import { resetLogicState } from '../../../../features/logicSlice';
+import { resetLogicCookieState } from '../../../../features/cookieSlice';
 import Button from '../../../ui/Button/Button';
 import type { AppDispatch, RootState } from '../../../../store/store';
 import type { Theme } from '../../../types/global-state-types/GlobalTypes';
@@ -13,6 +14,7 @@ function ButtonReset() {
 
   const onResetClick = useCallback(() => {
     dispatch(resetLogicState());
+    dispatch(resetLogicCookieState());
     dispatch(statusMessage('select a target'));
   }, [dispatch]);
 
