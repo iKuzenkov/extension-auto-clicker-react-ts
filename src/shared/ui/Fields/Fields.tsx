@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { inputsState } from '../../../features/logicSlice';
+import { quantityOfClicks } from '../../../features/cookieSlice';
 import type { AppDispatch, RootState } from '../../../store/store';
 import { type ChangeEvent } from 'react';
 import type { Time } from '../../types/global-state-types/GlobalTypes';
 import type { Props } from './Types';
-import './Input.scss';
+import './Fields.scss';
 
 function Input(props: Props) {
   const { name, value, 'aria-label': ariaLabel, title, placeholder } = props;
@@ -20,8 +21,11 @@ function Input(props: Props) {
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           const value: string = e.target.value;
           if (!/^\d*$/.test(value)) return;
-
-          dispatch(inputsState({ ...time, [name]: value }));
+          dispatch(
+            name !== 'quantity'
+              ? inputsState({ ...time, [name]: value })
+              : quantityOfClicks(value)
+          );
         }}
         name={name}
         value={value}

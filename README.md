@@ -242,7 +242,7 @@ Input fields accept only numeric values using RegExp validation.
 Example:
 
 ```ts
-/^\d*$/
+/^\d*$/;
 ```
 
 Purpose:
@@ -333,7 +333,9 @@ The panel can be hidden without removing application state.
 Uses conditional rendering:
 
 ```tsx
-{isVisible && <Component />}
+{
+  isVisible && <Component />;
+}
 ```
 
 ---

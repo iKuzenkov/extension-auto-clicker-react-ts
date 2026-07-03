@@ -1,16 +1,16 @@
 import { useSelector } from 'react-redux';
 import { useRef } from 'react';
 import useSetPanelPosition from '../../../storage/panel-position/useSetPanelPosition';
-import Toolbar from '../Toolbar/Toolbar';
-import SelectTargetButton from '../SelectTargetButton/SelectTargetButton';
-import Inputs from '../Inputs/Inputs';
-import ButtonStart from '../ButtonStart/ButtonStart';
-import ButtonStop from '../ButtonStop/ButtonStop';
-import ButtonReset from '../ButtonReset/ButtonReset';
-import ClickCount from '../ClickCount/ClickCount';
-import CountDown from '../CountDown/CountDown';
-import HelperStatus from '../HelperStatus/HelperStatus';
-import Info from '../Info/Info';
+import Toolbar from '../../../shared/ui/components/Toolbar/Toolbar';
+import SelectTargetButton from '../../../shared/ui/components/SelectTargetButton/SelectTargetButton';
+import Inputs from '../../../shared/ui/components/Inputs/Inputs';
+import ButtonStart from '../../../shared/ui/components/ButtonStart/ButtonStart';
+import ButtonStop from '../../../shared/ui/components/ButtonStop/ButtonStop';
+import ButtonReset from '../../../shared/ui/components/ButtonReset/ButtonReset';
+import ClickCount from '../../../shared/ui/components/ClickCount/ClickCount';
+import CountDown from '../../../shared/ui/components/CountDown/CountDown';
+import HelperStatus from '../../../shared/ui/components/HelperStatus/HelperStatus';
+import Info from '../../../shared/ui/components/Info/Info';
 import type { RootState } from '../../../store/store';
 import type {
   HideShow,

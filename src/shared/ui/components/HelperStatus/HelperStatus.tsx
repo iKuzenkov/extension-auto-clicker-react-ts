@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { statusMessage } from '../../../features/uiSlice';
-import type { AppDispatch, RootState } from '../../../store/store';
+import { statusMessage } from '../../../../features/uiSlice';
+import type { AppDispatch, RootState } from '../../../../store/store';
 import type {
   Theme,
   Message,
-} from '../../../shared/types/global-state-types/GlobalTypes';
+} from '../../../types/global-state-types/GlobalTypes';
 import './HelperStatus.scss';
 
 function HelperStatus() {
@@ -13,7 +13,6 @@ function HelperStatus() {
   const message: Message = useSelector(
     (state: RootState): Message => state.ui.message
   );
-
   const isRunning: boolean = useSelector(
     (state: RootState): boolean => state.logic.isRunningTimerState
   );

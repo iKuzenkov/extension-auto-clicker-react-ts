@@ -4,11 +4,11 @@ import {
   timerState,
   timeUntilNextClickResult,
   setCountDown,
-} from '../../../features/logicSlice';
-import { statusMessage } from '../../../features/uiSlice';
-import Button from '../../../shared/ui/Button/Button';
-import type { AppDispatch, RootState } from '../../../store/store';
-import type { Theme } from '../../../shared/types/global-state-types/GlobalTypes';
+} from '../../../../features/logicSlice';
+import { statusMessage } from '../../../../features/uiSlice';
+import Button from '../../../ui/Button/Button';
+import type { AppDispatch, RootState } from '../../../../store/store';
+import type { Theme } from '../../../types/global-state-types/GlobalTypes';
 import './ButtonStop.scss';
 
 function ButtonStop() {
