@@ -10,4 +10,4 @@ The project includes accessibility improvements:
 
 ## Accessibility Demo
 
-![Accessibility Demo](./readme-assets/keyboard-navigation-focus-visible.gif)
+![Accessibility Demo](../readme-assets/keyboard-navigation-focus-visible.gif)
