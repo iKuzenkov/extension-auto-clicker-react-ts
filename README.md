@@ -6,7 +6,7 @@
 
 ## Safe Auto Clicker — Smart Mouse Click Automation for Any Website
 
-Chrome Web Store:  
+Chrome Web Store:
 https://chromewebstore.google.com/detail/mgadnfjigmdiljhffhjlopjfibddkneh
 
 500+ active users per week
@@ -15,7 +15,8 @@ https://chromewebstore.google.com/detail/mgadnfjigmdiljhffhjlopjfibddkneh
 
 # Video Overview
 
-Project overview and architecture explanation video:  
+Project overview and architecture explanation video:
+
 https://youtu.be/rK2RbL6nOBo
 
 Language: Ukrainian
@@ -112,331 +113,22 @@ Example shown in the project video:
 
 ---
 
-# Architecture
+# Documentation
 
-The project uses:
-
-- reusable UI components
-- custom React hooks
-- Redux Toolkit slices
-- isolated business logic
-- TypeScript typing across the entire project
-
-The codebase is separated into:
-
-- UI
-- hooks
-- logic
-- state management
-- storage utilities
+- [Architecture](./docs/architecture.md)
+- [CSS Isolation Strategy](./docs/css-isolation.md)
+- [Target Selection System](./docs/target-selection-system.md)
+- [Auto Click Engine](./docs/auto-click-engine.md)
+- [UI Features](./docs/ui-features.md)
+- [Accessibility](./docs/accessibility.md)
+- [Redux Toolkit Structure](./docs/redux-toolkit-structure.md)
+- [Fetch API Integration](./docs/fetch-api-integration.md)
+- [Testing](./docs/testing.md)
+- [Development Mode](./docs/development.md)
 
 ---
 
-# CSS Isolation Strategy
-
-The extension uses custom prefixed class names and ids such as:
-
-```txt
-acext-dark-ss
-```
-
-Naming explanation:
-
-- `acext` → Auto Clicker Extension
-- `ss` → Security Selector
-
-Purpose:
-
-- prevent website styles from overriding extension UI styles
-- isolate extension styling from external pages
-- keep consistent appearance across different websites
-- reduce CSS conflicts inside complex web applications
-
-This is especially important because the extension works directly inside third-party websites and CRM systems with large existing style systems.
-
----
-
-# Core Features
-
-## 1. Target Selection System
-
-The user clicks:
-
-```txt
-🎯 Select Target
-```
-
-After that:
-
-- the extension waits for a click on the webpage
-- the clicked DOM element is stored inside Redux state
-- this element becomes the target for automation
-
-Main files:
-
-```txt
-useSaveElement
-handleElementClick
-```
-
-The project intentionally stores the actual DOM element inside Redux state.
-
-This approach was chosen because many modern websites dynamically change selectors and DOM structures, making selector-based targeting unreliable in some real-world cases.
-
-The project also explores selector-based approaches and explains their limitations in the video overview.
-
----
-
-## 2. Auto Click Engine
-
-Main logic:
-
-```txt
-useTimerLogic
-```
-
-Flow:
-
-- User clicks Start
-- Validation runs
-- Timer loop starts
-- Stored element receives `.click()`
-- Process repeats recursively
-
-The project uses `setTimeout` recursion instead of `setInterval`.
-
-Why:
-
-- avoids overlapping executions
-- easier cleanup
-- more predictable timer flow
-- safer for repeated side effects
-
-Example structure:
-
-```ts
-setTimeout(() => {
-  selectedElement.click();
-  tick();
-}, delay);
-```
-
----
-
-## 3. Input Validation
-
-Validation is implemented with:
-
-```txt
-useInputValidation
-```
-
-The project validates:
-
-- hours
-- minutes
-- seconds
-
-Input fields accept only numeric values using RegExp validation.
-
-Example:
-
-```ts
-/^\d*$/;
-```
-
-Purpose:
-
-- prevent invalid characters
-- keep controlled inputs stable
-- allow empty string input during editing
-
----
-
-## 4. Countdown System
-
-The extension includes:
-
-- countdown until next click
-- live timer updates
-- formatted time display
-
-Main hook:
-
-```txt
-useTimeUntilNextClick
-```
-
-Features:
-
-- interval cleanup
-- time normalization
-- dynamic UI updates
-
----
-
-## 5. Controls
-
-### Start
-
-- validates selected target
-- validates timer input
-- starts click automation
-
-### Stop
-
-- stops timer execution
-- clears active timeout
-- preserves selected element and user data
-
-### Reset
-
-- resets Redux state to initial values
-- clears timer state
-- resets UI status
-
----
-
-# UI Features
-
-## Drag & Drop Panel
-
-Implemented with:
-
-```txt
-useDrag
-```
-
-Features:
-
-- draggable extension window
-- viewport boundary calculations
-- saved panel position
-
----
-
-## Theme Switching
-
-Features:
-
-- Light theme
-- Dark theme
-- dynamic UI styles
-- accessibility-aware focus colors
-
----
-
-## Hide / Show System
-
-The panel can be hidden without removing application state.
-
-Uses conditional rendering:
-
-```tsx
-{
-  isVisible && <Component />;
-}
-```
-
----
-
-# Accessibility (A11y)
-
-The project includes accessibility improvements:
-
-- keyboard navigation
-- focus handling
-- ARIA labels
-- accessible buttons
-- theme-aware focus visibility
-
-## Accessibility Demo
-
-![Accessibility Demo](./readme-assets/keyboard-navigation-focus-visible.gif)
-
----
-
-# Redux Toolkit Structure
-
-## logicSlice
-
-Handles:
-
-- selected element
-- timer state
-- click counter
-- countdown
-- delay state
-- drag state
-
----
-
-## uiSlice
-
-Handles:
-
-- theme
-- visibility
-- status messages
-
----
-
-# Fetch API Integration
-
-The project includes a small API integration example.
-
-Used for:
-
-- loading "How to Use" information dynamically
-- external JSON data rendering
-
-Data is fetched from a GitHub-hosted JSON file.
-
----
-
-# Testing
-
-Jest is used for testing business logic.
-
-Examples:
-
-- timer calculations
-- validation logic
-- delay conversion
-- element handling logic
-
----
-
-# Dev Mode
-
-The project includes a dedicated development mode.
-
-Purpose:
-
-- faster local testing
-- development without Chrome extension environment
-- isolated UI testing
-
----
-
-# Project Highlights
-
-This project demonstrates:
-
-- React architecture
-- TypeScript usage in real business logic
-- Redux Toolkit state management
-- custom hooks architecture
-- DOM interaction
-- timer systems
-- accessibility support
-- reusable component patterns
-- side effect management
-- clean code practices
-
----
-
-## Local Development
+# Local Development
 
 ```bash
 # Clone repository
@@ -452,7 +144,7 @@ npm install
 npm run dev
 ```
 
-### Important
+Important
 
 If the Chrome extension version is already enabled in the browser,
 disable the installed extension before running dev mode.
@@ -476,8 +168,6 @@ npm run test
 npm run type-check
 npm run done
 ```
-
----
 
 # Summary
 
