@@ -15,3 +15,5 @@ The codebase is separated into:
 - logic
 - state management
 - storage utilities
+
+State management is split by concern: Redux Toolkit holds client/UI state, while React Query handles server-state (data fetching, loading/error state, caching) — see [Fetch API Integration](./fetch-api-integration.md).

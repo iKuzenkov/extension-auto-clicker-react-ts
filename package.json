@@ -17,8 +17,8 @@
     "done": "npm run type-check && npm run lint:fix && npm run lint:css:fix && npm run format && npm run build"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@reduxjs/toolkit": "^2.11.2",
+    "@tanstack/react-query": "^5.101.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-redux": "^9.2.0",
