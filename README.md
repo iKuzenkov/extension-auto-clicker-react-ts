@@ -81,6 +81,7 @@ The user can select any element on a webpage and automatically trigger clicks us
 
 - Redux Toolkit
 - React Redux
+- React Query (server-state/data fetching)
 
 ## Routing
 

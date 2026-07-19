@@ -1,38 +1,29 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { useQuery } from '@tanstack/react-query';
 import useSetPanelPosition from '../../../storage/panel-position/useSetPanelPosition';
 import infoData from './data/infoData';
 import Title from './components/Title/Title';
 import InfoUse from './components/InfoUse/InfoUse';
 import Buttons from './components/Buttons/Buttons';
-import type { DataInfo } from './data/TypesData';
 import type { Theme } from '../../../shared/types/global-state-types/GlobalTypes';
 import type { RootState } from '../../../store/store';
 import './MoreInfo.scss';
 
 function MoreInfo() {
   const theme: Theme = useSelector((state: RootState): Theme => state.ui.theme);
-  const [data, setData] = useState<DataInfo | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<boolean>(false);
-
   const panelRef = useRef<HTMLDivElement>(null);
 
   useSetPanelPosition({ panelRef });
 
-  useEffect(() => {
-    const timerLoading: number = setTimeout(() => {
-      setLoading(true);
-    }, 400);
-
-    infoData()
-      .then(setData)
-      .catch(() => setError(true))
-      .finally(() => {
-        clearTimeout(timerLoading);
-        setLoading(false);
-      });
-  }, []);
+  const {
+    data,
+    isPending: loading,
+    isError: error,
+  } = useQuery({
+    queryKey: ['more-info'],
+    queryFn: infoData,
+  });
 
   return (
     <>

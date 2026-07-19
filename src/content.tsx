@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { store } from './store/store';
+import { queryClient } from './query/queryClient';
 import App from './App';
 import type { MessageTypes } from './shared/types/content-types/MessageTypes';
 import './styles/styles.scss';
@@ -76,6 +78,8 @@ export function RootWrapper() {
 const root = createRoot(rootElement);
 root.render(
   <Provider store={store}>
-    <RootWrapper />
+    <QueryClientProvider client={queryClient}>
+      <RootWrapper />
+    </QueryClientProvider>
   </Provider>
 );
