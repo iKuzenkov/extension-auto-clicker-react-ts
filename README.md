@@ -1,10 +1,10 @@
-# Safe Auto Clicker — Smart Mouse Click Automation for Any Website
+# Safe Auto Clicker and Cookie Clicker — for Any Website
 
 ---
 
 # Chrome Web Store
 
-## Safe Auto Clicker — Smart Mouse Click Automation for Any Website
+## Safe Auto Clicker and Cookie Clicker — for Any Website
 
 Chrome Web Store:
 https://chromewebstore.google.com/detail/mgadnfjigmdiljhffhjlopjfibddkneh
